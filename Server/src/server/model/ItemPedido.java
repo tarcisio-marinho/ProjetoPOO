@@ -5,21 +5,19 @@
  */
 package server.model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author tarcisio
  */
 public class ItemPedido {
     private int quantidade;
-    private String id;
+    private int id;
     private String nome;
     private float precoUnidade;
     
-    public void ItemPedido(int qtd, String id, Produtos p){
+    public void ItemPedido(int qtd, Produtos p){
         this.quantidade = qtd;
-        this.id = id;
+        this.id = p.getId();
         this.nome = p.getNome();
         this.precoUnidade = p.getPreco();
     }
