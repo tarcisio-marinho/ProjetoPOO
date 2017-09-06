@@ -5,10 +5,12 @@
  */
 package server.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tarcisio
  */
 public class Pedido {
-    
+   private ArrayList <ItemPedido> itens;
 }
