@@ -5,6 +5,8 @@
  */
 package server;
 
+import server.views.MenuPrincipal;
+
 /**
  *
  * @author tarcisio
@@ -16,6 +18,10 @@ public class Server {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int op = 1;
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.menuPrincipal1();
+
     }
-    
+
 }
