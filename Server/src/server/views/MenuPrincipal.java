@@ -29,8 +29,8 @@ public class MenuPrincipal {
                     telaUsuario1.telaEntradaUsuario1();
                     break;
                 case 2:
-                    TelaLoja1 telaLoja1 = new TelaLoja1();
-                    telaLoja1.telaEntradaLoja();
+                    TelaEntradaLoja telaLoja1 = new TelaEntradaLoja();
+                    telaLoja1.telaEntradaLoja1();
                     break;
                 case 3: 
                     break;

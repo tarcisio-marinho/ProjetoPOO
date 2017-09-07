@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author Junior
  */
-public class TelaLoja1 {
-    public void telaEntradaLoja() {
+public class TelaEntradaLoja {
+    public void telaEntradaLoja1() {
         Scanner tec = new Scanner(System.in);
         int op;
         do {
@@ -23,13 +23,14 @@ public class TelaLoja1 {
             op = tec.nextInt();
             switch (op) {
                 case 1:
-                    TelaLoginUsuario telaLogin1 = new TelaLoginUsuario();
-                    telaLogin1.telaLoginUsuario1();
+                    //TELA DE LOGIN DA LOJA
                     break;
                 case 2:
-                    //TELA DE CADASTRO DO USUARIO
+                    //TELA DE CADASTRO DA LOJA
                     break;
                 case 3:
+                    MenuPrincipal voltar = new MenuPrincipal();
+                    voltar.menuPrincipal1();
                     break;
                 default:
                     System.out.println("Opção invalida!");

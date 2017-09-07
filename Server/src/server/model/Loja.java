@@ -21,7 +21,7 @@ public class Loja {
     private String nomeDono;
     private ArrayList <Produtos> produtos;
     
-    public void Loja(int id, String nome, String telefone, String login, String senha, String nomeDono){
+    public Loja(int id, String nome, String telefone, String login, String senha, String nomeDono){
         this.id = id;
         this.nome = nome;
         this.nomeDono = nomeDono;
