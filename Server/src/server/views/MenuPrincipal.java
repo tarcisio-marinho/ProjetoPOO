@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class MenuPrincipal {
 
-    public void menuPrincipal1() {
+    public void menuPrincipal() {
         Scanner tec = new Scanner(System.in);
         int op;
 
@@ -25,8 +25,8 @@ public class MenuPrincipal {
             op = tec.nextInt();
             switch (op) {
                 case 1:
-                    TelaEntradaUsuario telaUsuario1 = new TelaEntradaUsuario();
-                    telaUsuario1.telaEntradaUsuario1();
+                    TelaEntradaCliente telaUsuario1 = new TelaEntradaCliente();
+                    telaUsuario1.EntradaCliente();
                     break;
                 case 2:
                     TelaEntradaLoja telaLoja1 = new TelaEntradaLoja();

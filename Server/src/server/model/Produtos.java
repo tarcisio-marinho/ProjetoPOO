@@ -22,15 +22,15 @@ public class Produtos {
         this.id = id;
     }
     
-    protected void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
     
-    protected void setPreco(float preco){
+    public void setPreco(float preco){
         this.preco = preco;
     }
     
-    protected void setDescricao(String descricao){
+    public void setDescricao(String descricao){
         this.descricao = descricao;
     }
     

@@ -6,15 +6,15 @@
 package server.views;
 
 import java.util.Scanner;
-import server.controllers.ControllerUsuario;
+import server.controllers.ControllerCliente;
 import server.model.Cliente;
 
 /**
  *
  * @author Junior
  */
-public class TelaLoginUsuario {
-    public void telaLoginUsuario1(){
+public class TelaLoginCliente {
+    public void loginCliente(){
         /*
             A view tem que validar os dados inseridos pelo usuario, login vazio, caracter invalido, etc.      
         */
@@ -26,13 +26,14 @@ public class TelaLoginUsuario {
         login = tec.nextLine();
         System.out.println("Digite a senha: ");
         senha = tec.nextLine();
-        ControllerUsuario controller1 = new ControllerUsuario();
+        ControllerCliente controller1 = new ControllerCliente();
         if(controller1.logar(login, senha) == false){
             System.out.println("Conta não existe");
         }else{
             System.out.println("Bem vindo !!!");
-            // c = controller1.buscardados(login); 
-            // depois exibe os dados do cliente
+            c = controller1.buscarDados(login);
+            TelaMenuCliente tela = new TelaMenuCliente(c);
+            tela.exibirMenu();
         }
     }
 }

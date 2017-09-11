@@ -54,31 +54,31 @@ public class Loja {
         return this.nomeDono;
     }
     
-    private void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
     
-    private void setSenha(String senha){
+    public void setSenha(String senha){
         this.senha = senha;
     }
     
-    private void setLogin(String login){
+    public void setLogin(String login){
         this.login = login;
     }
     
-    private void setTelefone(String telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
     
-    private void setNomeDono(String nomeDono){
+    public void setNomeDono(String nomeDono){
         this.nomeDono = nomeDono;
     }
     
-    private void addProduto(Produtos p){
+    public void addProduto(Produtos p){
         this.produtos.add(p);
     }
     
-    private boolean removeProduto(Produtos p){ // retornar o objeto ?
+    public boolean removeProduto(Produtos p){ // retornar o objeto ?
         for (Produtos pro : produtos){
             if(p.getId() == pro.getId()){
                 this.produtos.remove(pro);

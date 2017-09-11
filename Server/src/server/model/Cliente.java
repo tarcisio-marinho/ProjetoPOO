@@ -34,7 +34,7 @@ public class Cliente {
         this.nome = novoNome;
     }
     
-    private void setTelefone(String novoTelefone){
+    public void setTelefone(String novoTelefone){
         this.telefone = novoTelefone;
     }
     
@@ -42,8 +42,11 @@ public class Cliente {
         return this.telefone;
     }
     
-    private void setSenha(String novaSenha){
+    public void setSenha(String novaSenha){
         this.senha = novaSenha;
+    }
+    public String getSenha(){
+        return this.senha;
     }
     
 }
