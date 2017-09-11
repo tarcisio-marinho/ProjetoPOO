@@ -1,27 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package server.model;
 
-/**
- *
- * @author tarcisio
- */
-public class Produtos {
+public class Produto {
     private String nome;
     private int id;
-    private float preco;
+    private double preco;
     private String descricao;
-    
-    public void Produtos(String nome, String descricao, int id, float preco){
+
+    public Produto(String nome, String descricao, int id, double preco){
         this.nome = nome;
-        this.preco = preco; 
+        this.preco = preco;
         this.descricao = descricao;
         this.id = id;
     }
-    
+
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -29,23 +20,23 @@ public class Produtos {
     public void setPreco(float preco){
         this.preco = preco;
     }
-    
+
     public void setDescricao(String descricao){
         this.descricao = descricao;
     }
-    
+
     public String getNome(){
         return this.nome;
     }
-    
+
     public String getDescricao(){
         return this.descricao;
     }
-    
-    public float getPreco(){
+
+    public double getPreco(){
         return this.preco;
     }
-    
+
     public int getId(){
         return this.id;
     }

@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package server.views;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Junior
- */
 public class MenuPrincipal {
 
     public void menuPrincipal() {
@@ -32,12 +24,11 @@ public class MenuPrincipal {
                     TelaEntradaLoja telaLoja1 = new TelaEntradaLoja();
                     telaLoja1.telaEntradaLoja1();
                     break;
-                case 3: 
+                case 3:
                     break;
                 default:
                     System.out.println("Opção invalida!");
-                    break;   
+                    break;
             }
         } while(op < 1 || op > 3);
     }
-}
