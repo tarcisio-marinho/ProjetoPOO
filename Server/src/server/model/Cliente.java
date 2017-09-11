@@ -46,9 +46,6 @@ public class Cliente {
     public void setSenha(String novaSenha){
         this.senha = novaSenha;
     }
-    public String getSenha(){
-        return this.senha;
-    }
     
     public String getSenha() {
     	return this.senha;
