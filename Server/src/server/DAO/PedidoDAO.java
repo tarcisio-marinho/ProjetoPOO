@@ -28,19 +28,20 @@ public class PedidoDAO {
     
     public Pedido buscarPedido(int id){
         for (Pedido ped : pedidos){
-            if(id == ped.getId){ // implementar classe pedidos
+           /* if(id == ped.getId){ // implementar classe pedidos
                 return ped;
-            }
+            }*/
         }
         return null;
     }
     
     public Pedido existeNovoPedido(){
         for (Pedido ped : this.pedidos){
-            if(ped.getAceito == false){
+            /*if(ped.getAceito == false){
                 return ped;
-            }
+            }*/
         }
         return null;
     }
+
 }

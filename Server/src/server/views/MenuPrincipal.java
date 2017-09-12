@@ -10,9 +10,9 @@ public class MenuPrincipal {
         int op;
 
         do {
-            System.out.println("1 - USUARIO");
-            System.out.println("2 - LOJA");
-            System.out.println("3 - SAIR");
+            System.out.println("1) USUARIO");
+            System.out.println("2) LOJA");
+            System.out.println("3) SAIR");
             System.out.println("DIGITE A OPÇÃO: ");
             op = tec.nextInt();
             switch (op) {
@@ -22,7 +22,7 @@ public class MenuPrincipal {
                     break;
                 case 2:
                     TelaEntradaLoja telaLoja1 = new TelaEntradaLoja();
-                    telaLoja1.telaEntradaLoja1();
+                    telaLoja1.entradaLoja();
                     break;
                 case 3:
                     break;
@@ -32,3 +32,4 @@ public class MenuPrincipal {
             }
         } while(op < 1 || op > 3);
     }
+}

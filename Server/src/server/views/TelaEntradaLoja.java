@@ -12,29 +12,37 @@ import java.util.Scanner;
  * @author Junior
  */
 public class TelaEntradaLoja {
-    public void telaEntradaLoja1() {
+    public void entradaLoja() {
         Scanner tec = new Scanner(System.in);
         int op;
-        do {
-            System.out.println("1 - LOGIN");
-            System.out.println("2 - CADASTRAR");
-            System.out.println("3 - VOLTAR");
-            System.out.println("Digite a opção: ");
-            op = tec.nextInt();
-            switch (op) {
-                case 1:
-                    //TELA DE LOGIN DA LOJA
-                    break;
-                case 2:
-                    //TELA DE CADASTRO DA LOJA
-                    break;
-                case 3:
-                    MenuPrincipal voltar = new MenuPrincipal();
-                    voltar.menuPrincipal1();
-                    break;
-                default:
-                    System.out.println("Opção invalida!");
-            }
-        } while (op < 1 || op > 3);
+        mostrar();
+        
+        op = entrada();
+        switch (op) {
+            case 1:
+                TelaLoginLoja login = new TelaLoginLoja();
+                login.telaLoginLoja();
+                break;
+            case 2:
+                TelaCadastroLoja cadastro = new TelaCadastroLoja();
+                cadastro.telaCadastroLoja();
+                break;
+            case 3:
+                return;
+            default:
+                System.out.println("Opção invalida!");
+        }
+    }
+    
+    private void mostrar(){
+        System.out.println("1 - LOGIN");
+        System.out.println("2 - CADASTRAR");
+        System.out.println("3 - VOLTAR");
+        System.out.println("Digite a opção: ");
+    }
+    
+    private int entrada(){
+        Scanner s = new Scanner(System.in);
+        return s.nextInt();
     }
 }

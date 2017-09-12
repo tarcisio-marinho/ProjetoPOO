@@ -10,8 +10,8 @@ public class Loja extends Conta{
     private String nomeDono;
     private final List<Produto> produtos;
 
-    public Loja(int id, String nome, String telefone, String login, String senha, String nomeDono){
-        this.id = id;
+    public Loja(String nome, String telefone, String login, String senha, String nomeDono){
+        this.id = 0;
         this.nomeDono = nomeDono;
         super.setNome(nome);
         super.setTelefone(telefone);

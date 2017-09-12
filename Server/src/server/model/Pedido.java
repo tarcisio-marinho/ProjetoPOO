@@ -3,14 +3,16 @@ package server.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Pedido {
-	private int id; 
-	private Cliente cliente;
-	private List<Produto> produtos = new ArrayList<Produto>();;
-	
+    private int id; 
+    private Cliente cliente;
+    private List<Produto> produtos = new ArrayList<Produto>();;
+
    
-	public Pedido(int id, Cliente cliente, Produto produto){
-	   this.id = id;
+    public Pedido(Cliente cliente, Produto produto){
+	   this.id = 0;
 	   this.cliente = cliente;	   	   
 	   this.produtos.add(produto);	   
    }
