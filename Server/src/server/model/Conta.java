@@ -9,7 +9,7 @@ package server.model;
  *
  * @author tarcisio
  */
-public class Conta {
+public abstract class Conta {
     private String nome; 
     private String telefone;
     private String login;

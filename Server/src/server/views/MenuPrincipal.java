@@ -7,6 +7,7 @@ public class MenuPrincipal {
     private Scanner entrada;
     private int escolha;
 
+
     public void exibirMenu() {
         System.out.println("1) USUARIO");
         System.out.println("2) LOJA");
