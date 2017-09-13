@@ -7,7 +7,9 @@ public class Server {
         
         MenuPrincipal menu = new MenuPrincipal();
         
-        menu.menuPrincipal();
+        menu.exibirMenu();
+        menu.lerEntrada();
+        menu.switchMenu();
     }
 
 }

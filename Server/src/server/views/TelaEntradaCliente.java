@@ -11,16 +11,21 @@ import java.util.Scanner;
  * @author Junior
  */
 public class TelaEntradaCliente {
-
-    public void EntradaCliente() {
-        Scanner tec = new Scanner(System.in);
-        int op;
+    private Scanner entrada;
+    private int escolha;
+    public void exibirMenu() {
         System.out.println("1 - LOGIN");
         System.out.println("2 - CADASTRAR");
         System.out.println("3 - VOLTAR");
         System.out.println("Digite a opção: ");
-        op = tec.nextInt();
-        switch (op) {
+    }
+    public void lerEntrada(){
+        this.entrada = new Scanner(System.in);
+        this.escolha = entrada.nextInt();
+        System.gc();
+    }
+    public void switchMenu(){
+        switch (this.escolha) {
             case 1:
                 TelaLoginCliente tela1 = new TelaLoginCliente();
                 tela1.loginCliente();
@@ -33,8 +38,7 @@ public class TelaEntradaCliente {
                 return;
             default:
                 System.out.println("Opção invalida!");
-                break;
-            
+                break;            
         }
     }
 }

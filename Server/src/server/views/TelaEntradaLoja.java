@@ -12,13 +12,24 @@ import java.util.Scanner;
  * @author Junior
  */
 public class TelaEntradaLoja {
-    public void entradaLoja() {
-        Scanner tec = new Scanner(System.in);
-        int op;
-        mostrar();
-        
-        op = entrada();
-        switch (op) {
+
+    private Scanner entrada;
+    private int escolha;
+
+    public void exibirMenu() {
+        System.out.println("1 - LOGIN");
+        System.out.println("2 - CADASTRAR");
+        System.out.println("3 - VOLTAR");
+        System.out.println("Digite a opção: ");
+    }
+
+    public void lerEntrada() {
+        this.entrada = new Scanner(System.in);
+        this.escolha = entrada.nextInt();
+        System.gc();
+    }
+    public void switchMenu() {
+        switch (this.escolha) {
             case 1:
                 TelaLoginLoja login = new TelaLoginLoja();
                 login.telaLoginLoja();
@@ -32,17 +43,5 @@ public class TelaEntradaLoja {
             default:
                 System.out.println("Opção invalida!");
         }
-    }
-    
-    private void mostrar(){
-        System.out.println("1 - LOGIN");
-        System.out.println("2 - CADASTRAR");
-        System.out.println("3 - VOLTAR");
-        System.out.println("Digite a opção: ");
-    }
-    
-    private int entrada(){
-        Scanner s = new Scanner(System.in);
-        return s.nextInt();
     }
 }

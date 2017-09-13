@@ -12,8 +12,8 @@ import server.model.Cliente;
  */
 public class TelaMenuCliente {
     private Cliente c;
-    Scanner n = new Scanner(System.in);
-    int escolha;
+    private Scanner entrada;
+    private int escolha;
     
     public TelaMenuCliente(Cliente c){
         this.c = c;
@@ -24,8 +24,18 @@ public class TelaMenuCliente {
             System.out.println("1) realizar pedido");
             System.out.println("2) Ver perfil");
             System.out.println("3) Sair");
-            escolha = n.nextInt();
-            switch(escolha){
+            lerEntrada();
+            switchMenu();
+        }
+        
+    }
+    public void lerEntrada(){
+        this.entrada = new Scanner(System.in);
+        this.escolha = entrada.nextInt();
+        System.gc();
+    }
+    public void switchMenu(){
+        switch(this.escolha){
                 case 1:
                     fazerPedido();
                     break;
@@ -41,10 +51,7 @@ public class TelaMenuCliente {
                     System.out.println("Opção inválida");
                     break;
             }
-        }
-        
     }
-    
     public void fazerPedido(){
         
     }

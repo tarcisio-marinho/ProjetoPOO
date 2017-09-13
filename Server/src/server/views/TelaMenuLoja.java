@@ -12,6 +12,8 @@ import server.model.Loja;
  */
 public class TelaMenuLoja {
     private final Loja loja;
+    private int escolha;
+    private Scanner entrada;
     
     public TelaMenuLoja(Loja loja){
         this.loja = loja;
@@ -23,10 +25,18 @@ public class TelaMenuLoja {
             System.out.println("2) Ver perfil");
             System.out.println("3) Sair");
             System.out.println("Digite uma opção:");
-            Scanner s = new Scanner(System.in);
-            int op;
-            op = s.nextInt();
-            switch (op){
+            lerEntrada();
+            switchMenu();
+            
+        }
+    }
+    public void lerEntrada(){
+        this.entrada = new Scanner(System.in);
+        escolha = entrada.nextInt();
+        System.gc();
+    }
+    public void switchMenu(){
+        switch (this.escolha){
                 case 1:
                     novosPedidos();
                     break;
@@ -40,7 +50,6 @@ public class TelaMenuLoja {
                     System.out.println("Opção inválida");
                     break;
             }
-        }
     }
     
     public void novosPedidos(){

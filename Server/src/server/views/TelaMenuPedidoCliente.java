@@ -8,6 +8,8 @@ import server.model.Pedido;
 public class TelaMenuPedidoCliente {
     PedidoDAO banco = new PedidoDAO();
     private int idPedido;
+    private Scanner entrada;
+    private int escolha;
     
     private int getId(){
         return this.idPedido;
@@ -24,10 +26,17 @@ public class TelaMenuPedidoCliente {
            System.out.println("2) Checar pedido");
            System.out.println("3) Sair");
            System.out.print("Digite uma opção:");
-           Scanner scanner = new Scanner(System.in);
-           int op;
-           op = scanner.nextInt();
-           switch (op){
+           lerEntrada();
+           switchMenu();
+       }
+   }
+    public void lerEntrada(){
+        this.entrada = new Scanner(System.in);
+        this.escolha = entrada.nextInt();
+        System.gc();
+    }
+    public void switchMenu(){
+        switch (this.escolha){
                case 1:
                    fazerPedido();
                    break;
@@ -41,9 +50,7 @@ public class TelaMenuPedidoCliente {
                    System.out.println("Opção inválida");
                    break;
            }
-       }
-   }
-
+    }
     
     
     private void fazerPedido(){
@@ -52,8 +59,8 @@ public class TelaMenuPedidoCliente {
         
         System.out.print("Cod. Produto: ");
         
-        Pedido pedido = new Pedido(cliente, produto);
-        banco.enviarPedido(pedido);
+        //Pedido pedido = new Pedido(cliente, produto);
+       // banco.enviarPedido(pedido);
     }
     
     
