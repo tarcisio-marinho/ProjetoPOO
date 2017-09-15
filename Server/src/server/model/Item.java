@@ -7,20 +7,21 @@ public class Item {
     private String nome;
     private double precoUnidade;
     
-    public Item(int quantidade, int id, String nome, double precoUnidade){
+    public Item(int quantidade, Produto produto){
         this.quantidade = quantidade;
-        this.id = id;
-        this.nome = nome;
-        this.precoUnidade = precoUnidade;
+        this.id = produto.getId();
+        this.nome = produto.getNome();
+        this.precoUnidade = produto.getPreco();
     }
-    
-    
+        
     public String getNome() {
     	return this.nome;
     }
+    
     public int getId() {
     	return this.id;
     }
+    
     public double getPrecoUnidade() {
     	return this.precoUnidade;
     }

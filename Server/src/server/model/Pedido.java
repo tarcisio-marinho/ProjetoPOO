@@ -7,37 +7,49 @@ import java.util.List;
 
 public class Pedido {
     private String id; 
-    private String codigoPedido;
-    private Cliente cliente;
+    private String vaucher;
     private List<Item> itens = new ArrayList<>();;
     private boolean statusVisualizado;
     private boolean statusPronto;
+    private boolean statusEntregue;
 
-     public Pedido(int idLoja, String codigoPedido, Cliente cliente, List<Item> itens){
-        this.codigoPedido =  codigoPedido;
-        this.id = Integer.toString(idLoja) + this.codigoPedido;
-        this.cliente = cliente;	   	   
+     public Pedido(int idLoja, String vaucher, List<Item> itens){
+        this.vaucher =  vaucher;
+        this.id = Integer.toString(idLoja) + this.vaucher;   	   
         this.itens = itens;
         this.statusPronto = false;
         this.statusVisualizado = false;
+        this.statusEntregue = false;
    }    
     
+    public String getReferenciaLoja(){
+        return id.substring(0, 2);        
+    } 
+     
+    public String getReferenciaPedido(){
+        return id.substring(2, 6);
+    }
+     
     public boolean isStatusVisualizado() {
         return this.statusVisualizado;
     }
+       
 
     public boolean isStatusPronto() {
         return this.statusPronto;
     }
     
-    public void setStatusVisualizado(boolean statusVisualizado) {
-        this.statusVisualizado = statusVisualizado;
+    public void setStatusVisualizado() {
+        this.statusVisualizado = true;
     }
 
-    public void setStatusPronto(boolean statusPronto) {
-        this.statusPronto = statusPronto;
+    public void setStatusPronto() {
+        this.statusPronto = true;
     }
        
+    public void setStatusEntregue(){
+        this.statusEntregue = true;
+    }
     
    public double getPrecoTotal() {
 	   double total = 0;
@@ -49,10 +61,7 @@ public class Pedido {
 	   return total;
    }
    
-   public Cliente getCliente() {
-	   return this.cliente;
-   }
-   
+  
    public String getId() {
 	   return this.id;
    }
