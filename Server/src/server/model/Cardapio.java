@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cardapio {
-    private String idLoja;
+    private String id;
     private List<Produto> produtos;
     
     public Cardapio(String idLoja){       
-        this.idLoja = idLoja;
+        this.id = idLoja; // mesmo ID que Loja
         this.produtos = new ArrayList<>();
     }
     
     public String getIdLoja() {
-        return idLoja;
+        return id;
     }
     
     public void addProduto(Produto produto){

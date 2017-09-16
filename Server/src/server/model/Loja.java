@@ -12,12 +12,30 @@ public class Loja{
         this.nomeDono = nomeDono; 
     }
 
-    public String getNomeDono(){
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getNomeDono() {
         return this.nomeDono;
     }
-    
-    public void setNomeDono(String nomeDono){
+
+    public void setNomeDono(String nomeDono) {
         this.nomeDono = nomeDono;
     }
+
+    
 
 }
