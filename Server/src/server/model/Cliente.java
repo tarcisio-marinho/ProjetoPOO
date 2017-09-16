@@ -1,22 +1,20 @@
 package server.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Cliente extends Conta{
-    private final List<Pedido> meusPedidos;
+public class Cliente{
+    private String nome;
+    private String telefone; 
     
-    
-    public Cliente(String  nome, String telefone, String login, String senha){
-        super.setNome(nome);
-        super.setTelefone(telefone);
-        super.setLogin(login);   
-        super.setSenha(senha);
-        this.meusPedidos = new ArrayList<>();
+    public Cliente(String  nome, String telefone){
+        this.nome = nome;
+        this.telefone = telefone;
     }
     
-    public List<Pedido> getMeusPedidos() {
-    	return this.meusPedidos;
+    public String getNome(){
+        return this.nome;        
+    }
+    
+    public String getTelefone(){
+        return this.telefone;
     }
     
 }
