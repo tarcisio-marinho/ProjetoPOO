@@ -12,7 +12,7 @@ public class Cardapio {
         this.idLoja = idLoja;
         this.produtos = new ArrayList<>();
     }
-
+    
     public String getIdLoja() {
         return idLoja;
     }
