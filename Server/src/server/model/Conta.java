@@ -1,14 +1,15 @@
-
 package server.model;
 
 public abstract class Conta {
+    private String nome;
+    private String telefone;
     private String login;
     private String senha;
-    
+
     public String getLogin(){
         return this.login;
     }
-    
+
     public void setLogin(String login) {
     	this.login = login;
     }
@@ -16,7 +17,7 @@ public abstract class Conta {
     public void setSenha(String novaSenha){
         this.senha = novaSenha;
     }
-    
+
     public String getSenha() {
     	return this.senha;
     }

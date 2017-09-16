@@ -6,12 +6,14 @@ import java.util.List;
 
 public class Loja extends Conta{
 
+    private static int idInc = 0;
+    
     private final int id;
     private String nomeDono;
     private final List<Produto> produtos;
 
     public Loja(String nome, String telefone, String login, String senha, String nomeDono){
-        this.id = 0;
+        this.id = incremetID();
         this.nomeDono = nomeDono;
         super.setNome(nome);
         super.setTelefone(telefone);
@@ -20,6 +22,10 @@ public class Loja extends Conta{
         this.produtos = new ArrayList<>();
     }
 
+    private int incremetID(){   
+       return ++Loja.idInc;
+    }
+    
     public int getId(){
         return this.id;
     }
@@ -47,5 +53,4 @@ public class Loja extends Conta{
 
     	}
     }
-
 }
