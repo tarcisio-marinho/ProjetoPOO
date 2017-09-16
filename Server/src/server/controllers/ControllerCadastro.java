@@ -8,6 +8,7 @@ package server.controllers;
 import server.DAO.CadastroDAO;
 import server.model.Conta;
 import server.model.ContaCliente;
+import server.model.ContaLoja;
 
 
 /**
@@ -18,13 +19,23 @@ public class ControllerCadastro {
     private CadastroDAO dao;
     public boolean cadastrar(ContaCliente contaCliente){
         boolean retorno;
-        retorno = dao.existeCliente();
+        retorno = dao.existeCliente(contaCliente);
         if(retorno == false){
-            dao.cadastrarCliente(cliente1);
+            dao.cadastrarCliente(contaCliente);
             return true;
         }else{
             return false;
         }
     }
     
+    public boolean cadastrar(ContaLoja contaLoja){
+        boolean retorno;
+        retorno = dao.existeLoja(contaLoja);
+        if(retorno == false){
+            dao.cadastrarLoja(contaLoja);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
