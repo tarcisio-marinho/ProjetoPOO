@@ -9,8 +9,8 @@ public class MenuPrincipal {
 
 
     public void exibirMenu() {
-        System.out.println("1) USUARIO");
-        System.out.println("2) LOJA");
+        System.out.println("1) LOGIN");
+        System.out.println("2) CADASTRO");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
     }

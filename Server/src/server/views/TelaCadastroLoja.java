@@ -15,7 +15,7 @@ import server.model.Loja;
  */
 public class TelaCadastroLoja {
 
-    public void telaCadastroLoja(){
+    public void cadastroLoja(){
         Scanner tec = new Scanner(System.in);
         boolean retornoController;
         String nome;

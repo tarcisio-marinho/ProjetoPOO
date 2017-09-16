@@ -6,39 +6,47 @@
 package server.views;
 
 import java.util.Scanner;
+
 /**
  *
- * @author Junior
+ * @author users
  */
-public class TelaEntradaCliente {
+public class TelaCadastro {
+
     private Scanner entrada;
     private int escolha;
+
+
     public void exibirMenu() {
-        System.out.println("1 - LOGIN");
-        System.out.println("2 - CADASTRAR");
-        System.out.println("3 - VOLTAR");
-        System.out.println("Digite a opção: ");
+        System.out.println("1) Cadastro Cliente");
+        System.out.println("2) Cadastro Loja");
+        System.out.println("3) SAIR");
+        System.out.println("DIGITE A OPÇÃO: ");
     }
-    public void lerEntrada(){
+
+    public void lerEntrada() {
         this.entrada = new Scanner(System.in);
         this.escolha = entrada.nextInt();
         System.gc();
     }
-    public void switchMenu(){
+
+    public void switchMenu() {
         switch (this.escolha) {
             case 1:
-                TelaLoginCliente tela1 = new TelaLoginCliente();
-                tela1.loginCliente();
+                TelaCadastroCliente telaUsuario1 = new TelaCadastroCliente();
+                telaUsuario1.cadastroCliente();
                 break;
             case 2:
-                TelaCadastroCliente tela2 = new TelaCadastroCliente();
-                tela2.CadastroCliente();
+                TelaCadastroLoja telaLoja1 = new TelaCadastroLoja();
+                telaLoja1.cadastroLoja();
                 break;
             case 3:
-                return;
+                break;
             default:
                 System.out.println("Opção invalida!");
-                break;            
+                break;
         }
     }
+
 }
+
