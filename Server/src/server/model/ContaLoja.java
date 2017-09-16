@@ -5,9 +5,13 @@ public class ContaLoja extends Conta{
     private String id;
     private Cardapio cardapio;
     private Loja loja;
-    public ContaLoja(String id) {
+    
+    public ContaLoja(String id, String login, String senha, String nome, String telefone, String dono) {
+        this.loja = new Loja(nome, telefone, dono);
         this.id = id;
         this.cardapio = new Cardapio(id);
+        super.setLogin(login);
+        super.setSenha(senha);
     }
     
     public String getId() {
@@ -20,10 +24,6 @@ public class ContaLoja extends Conta{
 
     public Cardapio getCardapio() {
         return this.cardapio;
-    }
-
-    public void setCardapio(Cardapio cardapio) {
-        this.cardapio = cardapio;
     }  
 
     public Loja getLoja(){

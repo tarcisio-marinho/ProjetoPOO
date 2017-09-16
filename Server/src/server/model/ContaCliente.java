@@ -11,7 +11,7 @@ public class ContaCliente extends Conta{
         this.cliente = new Cliente(nome, telefone);
         this.pedidos = new ArrayList<>(); 
         super.setLogin(login);
-        super.setSenha(senha);    
+        super.setSenha(senha);        
     }
     
     public void addPedido(Pedido pedido){
