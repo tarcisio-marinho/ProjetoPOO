@@ -1,8 +1,6 @@
 package server.model;
 
 public abstract class Conta {
-    private String nome;
-    private String telefone;
     private String login;
     private String senha;
 

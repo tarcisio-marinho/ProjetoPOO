@@ -12,4 +12,19 @@ public class ContaCliente extends Conta{
         this.pedidos = new ArrayList<>();    
     }
     
+    public void addPedido(Pedido pedido){
+        pedidos.add(pedido);
+    }
+    
+    public boolean removePedido(String idPedido){
+        boolean objeto = false;
+        for(Pedido pedido : pedidos){
+            if( pedido.getId().equals(idPedido)){
+                objeto = pedidos.remove(pedido);
+            }
+        }
+        return objeto;
+    }
+    
+    
 }

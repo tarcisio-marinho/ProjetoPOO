@@ -7,20 +7,29 @@ import java.util.List;
 
 public class Pedido {
     private String id; 
-    private String vaucher;
-    private List<Item> itens = new ArrayList<>();;
+    private String voucher;
+    private List<Item> itens;
+    
     private boolean statusVisualizado;
     private boolean statusPronto;
     private boolean statusEntregue;
 
-     public Pedido(int idLoja, String vaucher, List<Item> itens){
-        this.vaucher =  vaucher;
-        this.id = Integer.toString(idLoja) + this.vaucher;   	   
+    public Pedido(String idLoja, String voucher, List<Item> itens){
+    
+        this.itens = new ArrayList<>();
+        
+        this.voucher =  voucher;
+        this.id = "" + idLoja + this.voucher;   	   
         this.itens = itens;
+        
         this.statusPronto = false;
         this.statusVisualizado = false;
         this.statusEntregue = false;
    }    
+
+    public String getId() {
+        return this.id;
+    }
     
     public String getReferenciaLoja(){
         return id.substring(0, 2);        
@@ -33,8 +42,11 @@ public class Pedido {
     public boolean isStatusVisualizado() {
         return this.statusVisualizado;
     }
-       
-
+    
+    public boolean isStatusEntregue(){
+        return this.statusEntregue;
+    }
+    
     public boolean isStatusPronto() {
         return this.statusPronto;
     }
@@ -51,19 +63,14 @@ public class Pedido {
         this.statusEntregue = true;
     }
     
-   public double getPrecoTotal() {
-	   double total = 0;
-	   
-	   for(Item item : itens) {
-		   total += item.obterTotal();
-	   }
-	   
-	   return total;
-   }
-   
-  
-   public String getId() {
-	   return this.id;
-   }
-   
+    public double getPreco() {
+        double total = 0;
+
+        for(Item item : itens) {
+                total += item.getPreco();
+        }
+
+        return total;
+    }
+
 }

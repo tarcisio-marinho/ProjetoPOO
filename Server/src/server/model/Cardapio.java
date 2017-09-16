@@ -4,23 +4,13 @@ package server.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author users
- */
 public class Cardapio {
     private String idLoja;
     private List<Produto> produtos;
     
     public Cardapio(String idLoja){       
         this.idLoja = idLoja;
-        this.produtos = new ArrayList();
+        this.produtos = new ArrayList<>();
     }
 
     public String getIdLoja() {
@@ -28,11 +18,15 @@ public class Cardapio {
     }
     
     public void addProduto(Produto produto){
-        //chama controller para adicionar
+       this.produtos.add(produto);
     }
     
-    public void removeProduto(int idProduto){
-        //chama controller para remover
+    public void removeProduto(String idProduto){
+       for(Produto produto : produtos){
+           if( produto.getId().equals(idProduto) ){
+               produtos.remove(produto);
+           }
+       }
     }  
     
     public List getCardapio(){
