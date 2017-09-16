@@ -3,30 +3,14 @@ package server.model;
 
 public class Item {
     private int quantidade;
-    private int id;
-    private String nome;
-    private double precoUnidade;
+    private Produto produto;
     
     public Item(int quantidade, Produto produto){
         this.quantidade = quantidade;
-        this.id = produto.getId();
-        this.nome = produto.getNome();
-        this.precoUnidade = produto.getPreco();
+        this.produto = produto;
     }
-        
-    public String getNome() {
-    	return this.nome;
-    }
-    
-    public int getId() {
-    	return this.id;
-    }
-    
-    public double getPrecoUnidade() {
-    	return this.precoUnidade;
-    }
-    
-    public double obterTotal(){
-        return this.precoUnidade * this.quantidade;
+ 
+    public double getPreco(){
+        return produto.getPreco() * this.quantidade;
     }
 }

@@ -11,6 +11,21 @@ public class ContaCliente extends Conta{
         this.cliente = new Cliente(nome, telefone);
         this.pedidos = new ArrayList<>(); 
         super.setLogin(login);
-        super.setSenha(senha);
-    }    
+        super.setSenha(senha);    
+    }
+    
+    public void addPedido(Pedido pedido){
+        pedidos.add(pedido);
+    }
+    
+    public boolean removePedido(String idPedido){
+        boolean objeto = false;
+        for(Pedido pedido : pedidos){
+            if( pedido.getId().equals(idPedido)){
+                objeto = pedidos.remove(pedido);
+            }
+        }
+        return objeto;
+    }
+    
 }

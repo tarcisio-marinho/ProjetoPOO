@@ -17,4 +17,11 @@ public class Cliente{
         return this.telefone;
     }
     
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
+    }
 }
