@@ -6,6 +6,7 @@
 package server.DAO;
 
 import server.model.ContaCliente;
+import server.model.ContaLoja;
 
 /**
  *
@@ -15,13 +16,13 @@ public class CadastroDAO {
     public void cadastrarCliente(ContaCliente contaCliente){
         
     }
-    public void cadastrarCliente(ContaLoja contaLoja){
+    public void cadastrarLoja(ContaLoja contaLoja){
         
     }
-    public void existeCliente(ContaCliente contaCliente){
-        
+    public boolean existeCliente(ContaCliente contaCliente){
+        return true; //retorno apenas para não dar erro
     }
-    public void exsiteLoja(ContaLoja contaLoja){
-        
+    public boolean existeLoja(ContaLoja contaLoja){
+        return true; //retorno apenas para não dar erro
     }  
 }

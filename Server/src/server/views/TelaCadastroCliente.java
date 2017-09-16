@@ -46,9 +46,7 @@ public class TelaCadastroCliente {
             System.out.println("Telefone inválido");
             return;
         }
-        ControllerLogin contLogin = new ControllerLogin();
-        //Verificar se já há login igual no banco
-        ContaCliente cliente1 = new ContaCliente(nome, login, telefone, senha);
+        ContaCliente cliente1 = new ContaCliente(nome, telefone, login, senha);
         ControllerCadastro controller1 = new ControllerCadastro();
         retornoController = controller1.cadastrar(cliente1);
         if(retornoController == false){

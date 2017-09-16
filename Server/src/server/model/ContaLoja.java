@@ -5,10 +5,9 @@ public class ContaLoja extends Conta{
     private String id;
     private Cardapio cardapio;
     private Loja loja;
-    
-    public ContaLoja(String id, Cardapio cardapio) {
+    public ContaLoja(String id) {
         this.id = id;
-        this.cardapio = cardapio;
+        this.cardapio = new Cardapio(id);
     }
     
     public String getId() {

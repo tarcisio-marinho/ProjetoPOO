@@ -9,7 +9,9 @@
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaCadastroLoja.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/ContaCliente.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/DAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/DAO/LojaDAO.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/MenuPrincipal.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/controllers/ControllerLoja.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/controllers/ControllerCadastro.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaCadastro.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Cliente.java</file>
@@ -24,6 +26,7 @@
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/controllers/ControllerLogin.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaLogin.java</file>
             <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/controllers/ControllerCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/ContaLoja.java</file>
         </group>
     </open-files>
 </project-private>
