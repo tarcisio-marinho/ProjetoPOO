@@ -33,7 +33,7 @@ public class TelaLogin {
             System.out.println("Bem vindo !!!");
             c = controller1.buscarDados(login);
             TelaMenuCliente tela = new TelaMenuCliente(c);
-            tela.exibirMenu();
+                tela.exibirMenu();
         }
     }
 }

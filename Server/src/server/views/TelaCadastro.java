@@ -39,6 +39,7 @@ public class TelaCadastro {
             case 2:
                 TelaCadastroLoja telaLoja1 = new TelaCadastroLoja();
                 telaLoja1.cadastroLoja();
+              
                 break;
             case 3:
                 break;

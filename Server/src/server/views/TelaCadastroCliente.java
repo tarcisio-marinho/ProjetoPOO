@@ -17,50 +17,65 @@ import server.model.ContaCliente;
  * @author Junior
  */
 public class TelaCadastroCliente {
-    public void cadastroCliente(){
-        Scanner tec = new Scanner(System.in);
-        boolean retornoController;
+    
+    private ContaCliente lerDados(){
         String nome;
         String senha;
         String login;
         String telefone;
+        Scanner tec = new Scanner(System.in);
         System.out.println("Digite o login: ");
-        nome = tec.nextLine();
-        System.out.println("Digite a senha: ");
-        senha = tec.nextLine();
-        System.out.println("Digite o nome: ");
-        login = tec.nextLine();
-        System.out.println("Digite o telefone: ");
-        telefone = tec.nextLine();
-        
-        if(valida(login) == false){
-            System.out.println("login inválido");
-            return;
-        }else if(valida(senha) == false){
-            System.out.println("Senha inválida");
-            return;
-        }else if(valida(nome) == false){
-            System.out.println("Nome inválido");
-            return;
-        }else if(valida(telefone) == false){
-            System.out.println("Telefone inválido");
-            return;
-        }
-        ContaCliente cliente1 = new ContaCliente(nome, telefone, login, senha);
-        ControllerCadastro controller1 = new ControllerCadastro();
-        retornoController = controller1.cadastrar(cliente1);
-        if(retornoController == false){
-            System.out.println("Cliente já cadastrado");
-        }else{
-            System.out.println("Cadastrado com sucesso!");
-        }
-        
+        login= tec.nextLine();
+        System.out.println("Digite Senha: ");
+        senha= tec.nextLine();
+        System.out.println("Digite o nome:");
+        nome= tec.nextLine();
+        System.out.println("Digite o telefone");
+        telefone=tec.nextLine();
+        ContaCliente novoCliente = new ContaCliente(nome,telefone,login,senha);
+        return novoCliente;
     }
     
-    public boolean valida(String s){ // VALIDAÇÃO PODE SER MELHOR
+    public void cadastroCliente(){
+       ContaCliente c=lerDados();
+       
+       if(validaCliente(c)==true){
+            boolean retornoController;
+            ControllerCadastro controller1 = new ControllerCadastro();
+            retornoController = controller1.cadastrar(c);
+            if(retornoController == false){
+                System.out.println("Cliente já cadastrado");
+            }else{
+                System.out.println("Cadastrado com sucesso!");
+            }
+       }else{
+           System.out.println("Cadastro nao realizado ");
+       }
+    }
+    
+    private boolean validaString(String s){ // VALIDAÇÃO PODE SER MELHOR
         if(s.equals("")){
             return false;
         }
         return true;
+    }
+    
+    private boolean validaCliente(ContaCliente c){
+        
+        if(validaString(c.getLogin()) == false){
+            System.out.println("login inválido");
+            return false;
+        }else if(validaString(c.getSenha()) == false){
+            System.out.println("Senha inválida");
+            return false;
+        }else if(validaString(c.getNome()) == false){
+            System.out.println("Nome inválido");
+            return false;
+        }else if(validaString(c.getTelefone()) == false){
+            System.out.println("Telefone inválido");
+            return false;
+        }
+        return true;
+        
     }
 }

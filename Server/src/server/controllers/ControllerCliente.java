@@ -7,6 +7,7 @@ package server.controllers;
 
 import server.model.Cliente;
 import server.DAO.ClienteDAO;
+import server.model.ContaCliente;
 /**
  *
  * @author Junior
@@ -21,17 +22,17 @@ public class ControllerCliente {
     public boolean logar(String login, String senha){
         return dao.buscaLogin(login, senha);
     }
-    
-    public boolean cadastrar(Cliente cliente1){
+    /*
+    public boolean cadastrar(ContaCliente cliente1){
         boolean retorno;
-        retorno = dao.existeCliente(cliente1.getLogin());
+        retorno = dao.existeLogin(cliente1.getLogin());
         if(retorno == false){
-            dao.cadastrarCliente(cliente1);
+            dao.add(cliente1);
             return true;
         }else{
             return false;
         }
-    }
+    }*/
     
     public Cliente buscarDados(String login){
         Cliente c;

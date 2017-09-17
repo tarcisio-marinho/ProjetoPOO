@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/tarcisio/Desktop/ProjetoPOO/Server/src/server/model/Produto.java</file>
-            <file>file:/home/tarcisio/Desktop/ProjetoPOO/Server/src/server/model/Pedido.java</file>
-            <file>file:/home/tarcisio/Desktop/ProjetoPOO/Server/src/server/model/Conta.java</file>
-            <file>file:/home/tarcisio/Desktop/ProjetoPOO/Server/src/server/model/ContaCliente.java</file>
+            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/views/TelaMenuLoja.java</file>
+            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/LojaDAO.java</file>
+            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/CadastroDAO.java</file>
+            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/model/ContaLoja.java</file>
+            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/CardapioDAO.java</file>
         </group>
     </open-files>
 </project-private>

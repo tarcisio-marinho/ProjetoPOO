@@ -1,6 +1,7 @@
 
 package server.controllers;
 import server.DAO.LojaDAO;
+import server.model.ContaLoja;
 import server.model.Loja;
 
 public class ControllerLoja {
@@ -14,11 +15,11 @@ public class ControllerLoja {
         return this.dao.buscaLogin(login, senha);
     }
     
-    public boolean cadastrar(Loja loja1){
+    public boolean cadastrar(ContaLoja loja1){
         boolean retorno;
-        retorno = this.dao.existeLoja(loja1.getLogin());
+        retorno = this.dao.existeLogin(loja1.getLogin());
         if(retorno == false){
-            this.dao.cadastrarLoja(loja1);
+            this.dao.add(loja1);
             return true;
         }else{
             return false;

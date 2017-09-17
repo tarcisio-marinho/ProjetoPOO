@@ -29,4 +29,11 @@ public class ContaCliente extends Conta{
         return objeto;
     }
 
+    public String getNome(){
+        return this.cliente.getNome();
+    }
+    
+    public String getTelefone(){
+        return this.cliente.getTelefone();
+    }
 }

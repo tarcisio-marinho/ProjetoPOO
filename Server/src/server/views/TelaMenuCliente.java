@@ -3,18 +3,22 @@ package server.views;
 
 import java.util.Scanner;
 import server.DAO.PedidoDAO;
+import server.controllers.ControllerCardapioCliente;
 import server.model.Cliente;
 import server.model.Pedido;
 
 public class TelaMenuCliente {
-    PedidoDAO banco = new PedidoDAO();
+   /// PedidoDAO banco = new PedidoDAO(); // O Q?? 
+    private ControllerCardapioCliente controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
     private Cliente c;
 
     TelaMenuCliente(Cliente c) {
+        controllerC= new ControllerCardapioCliente();
         this.c = c;
+        this.escolha=0;
     }
     
     private int getId(){
@@ -27,7 +31,7 @@ public class TelaMenuCliente {
     
     
     public void exibirMenu(){
-       while(true){
+       while(this.escolha!=4){
            System.out.println("1) Fazer pedido");
            System.out.println("2) Checar pedido");
            System.out.println("3) Ver Perfil");
@@ -35,9 +39,10 @@ public class TelaMenuCliente {
            System.out.print("Digite uma opção:");
            lerEntrada();
            switchMenu();
+           
        }
    }
-    public void lerEntrada(){
+    private void lerEntrada(){
         this.entrada = new Scanner(System.in);
         this.escolha = entrada.nextInt();
         System.gc();
@@ -64,6 +69,7 @@ public class TelaMenuCliente {
     
     
     private void fazerPedido(){
+        controllerC.listarLojas();
         
         
         

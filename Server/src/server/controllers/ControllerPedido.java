@@ -5,10 +5,16 @@
  */
 package server.controllers;
 
+import server.DAO.PedidoDAO;
+
 /**
  *
  * @author flatio
  */
 public class ControllerPedido {
+    private PedidoDAO dao;
+    
+    
+    
     
 }
