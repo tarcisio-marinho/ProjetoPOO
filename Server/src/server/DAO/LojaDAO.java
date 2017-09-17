@@ -17,7 +17,7 @@ public class LojaDAO {
         return false;
     }
     
-    public boolean existeLoja(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
+    public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
         return false;
     }
     
