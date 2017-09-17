@@ -32,9 +32,9 @@ public class TelaMenuCliente {
     
     public void exibirMenu(){
        while(this.escolha!=4){
-           System.out.println("1) Fazer pedido");
-           System.out.println("2) Checar pedido");
-           System.out.println("3) Ver Perfil");
+           System.out.println("1) Ver Lojas");
+           System.out.println("2) Checar seus pedidos");
+           System.out.println("3) Ver Seu Perfil");
            System.out.println("4) Sair");
            System.out.print("Digite uma opção:");
            lerEntrada();
