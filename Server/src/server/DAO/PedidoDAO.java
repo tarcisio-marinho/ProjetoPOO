@@ -1,22 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package server.DAO;
 import java.util.ArrayList;
-import server.model.BancoDePedido;
 import server.model.Pedido;
 
-/**
- *
- * @author tarcisio
- */
 public class PedidoDAO {
     private ArrayList<Pedido> pedidos;
     
-    public void PedidoDAO(){
-        this.pedidos = null;
+    public PedidoDAO(){
+        this.pedidos = new ArrayList<>();
     }
     
     public void enviarPedido(Pedido p){
