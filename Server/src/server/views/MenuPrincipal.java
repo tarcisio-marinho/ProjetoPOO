@@ -9,8 +9,8 @@ public class MenuPrincipal {
 
 
     public void exibirMenu() {
-        System.out.println("1) USUARIO");
-        System.out.println("2) LOJA");
+        System.out.println("1) LOGIN");
+        System.out.println("2) CADASTRO");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
     }
@@ -24,13 +24,11 @@ public class MenuPrincipal {
     public void switchMenu() {
         switch (this.escolha) {
             case 1:
-                TelaEntradaCliente telaUsuario1 = new TelaEntradaCliente();
-                telaUsuario1.exibirMenu();
-                telaUsuario1.lerEntrada();
-                telaUsuario1.switchMenu();
+                TelaLogin telaUsuario1 = new TelaLogin();
+                telaUsuario1.login();
                 break;
             case 2:
-                TelaEntradaLoja telaLoja1 = new TelaEntradaLoja();
+                TelaCadastro telaLoja1 = new TelaCadastro();
                 telaLoja1.exibirMenu();
                 telaLoja1.lerEntrada();
                 telaLoja1.switchMenu();

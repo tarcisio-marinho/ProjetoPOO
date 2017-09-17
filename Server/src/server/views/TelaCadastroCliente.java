@@ -6,15 +6,18 @@
 package server.views;
 
 import java.util.Scanner;
+import server.controllers.ControllerCadastro;
 import server.controllers.ControllerCliente;
+import server.controllers.ControllerLogin;
 import server.model.Cliente;
+import server.model.ContaCliente;
 
 /**
  *
  * @author Junior
  */
 public class TelaCadastroCliente {
-    public void CadastroCliente(){
+    public void cadastroCliente(){
         Scanner tec = new Scanner(System.in);
         boolean retornoController;
         String nome;
@@ -43,9 +46,8 @@ public class TelaCadastroCliente {
             System.out.println("Telefone inválido");
             return;
         }
-        
-        Cliente cliente1 = new Cliente(nome, login, telefone, senha);
-        ControllerCliente controller1 = new ControllerCliente();
+        ContaCliente cliente1 = new ContaCliente(nome, telefone, login, senha);
+        ControllerCadastro controller1 = new ControllerCadastro();
         retornoController = controller1.cadastrar(cliente1);
         if(retornoController == false){
             System.out.println("Cliente já cadastrado");

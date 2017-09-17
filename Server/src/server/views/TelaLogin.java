@@ -4,37 +4,36 @@
  * and open the template in the editor.
  */
 package server.views;
-import server.model.Loja;
+
 import java.util.Scanner;
-import server.controllers.ControllerLoja;
+import server.controllers.ControllerCliente;
+import server.model.Cliente;
 
 /**
  *
- * @author users
+ * @author Junior
  */
-public class TelaLoginLoja {
-    
-    public void telaLoginLoja() {
-        Loja loja;
+public class TelaLogin {
+    public void login(){
+        /*
+            A view tem que validar os dados inseridos pelo usuario, login vazio, caracter invalido, etc.      
+        */
+        Cliente c;
         Scanner tec = new Scanner(System.in);
-        String login; 
         String senha;
-        
-        System.out.println("Digite seu login");
+        String login;
+        System.out.println("Digite o login: ");
         login = tec.nextLine();
-        System.out.println("Digite Sua Senha:");
+        System.out.println("Digite a senha: ");
         senha = tec.nextLine();
-        
-        ControllerLoja controller1 = new ControllerLoja();
-        
+        ControllerCliente controller1 = new ControllerCliente();
         if(controller1.logar(login, senha) == false){
             System.out.println("Conta não existe");
         }else{
             System.out.println("Bem vindo !!!");
-            loja = controller1.buscarDados(login);
-            TelaMenuLoja tela = new TelaMenuLoja(loja);
+            c = controller1.buscarDados(login);
+            TelaMenuCliente tela = new TelaMenuCliente(c);
             tela.exibirMenu();
         }
-        
     }
 }

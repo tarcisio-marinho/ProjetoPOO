@@ -1,56 +1,41 @@
 package server.model;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Loja{
 
-    private static int idInc = 0;
-    
-    private final int id;
+    private String nome;
+    private String telefone;
     private String nomeDono;
-    private final List<Produto> produtos;
 
-    public Loja(String nome, String telefone, String login, String senha, String nomeDono){
-        this.id = incremetID();
-        this.nomeDono = nomeDono;
-        super.setNome(nome);
-        super.setTelefone(telefone);
-        super.setLogin(login);   
-        super.setSenha(senha);
-        this.produtos = new ArrayList<>();
+    public Loja(String nome, String telefone,  String nomeDono){
+        this.nome = nome;
+        this.telefone = telefone;
+        this.nomeDono = nomeDono; 
     }
 
-    private int incremetID(){   
-       return ++Loja.idInc;
-    }
-    
-    public int getId(){
-        return this.id;
+    public String getNome() {
+        return this.nome;
     }
 
-    public String getNomeDono(){
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getNomeDono() {
         return this.nomeDono;
     }
-    
-    public void setNomeDono(String nomeDono){
+
+    public void setNomeDono(String nomeDono) {
         this.nomeDono = nomeDono;
     }
 
-    public void addProduto(Produto p){
-        this.produtos.add(p); //DAO PRODUTOS AQUI
-    }
+    
 
-    public void removeProduto(int id){
-
-    	try {
-    		this.produtos.remove(id);
-
-    	}catch(IndexOutOfBoundsException error) {
-    		System.out.println("ERRO: ao remover produto de uma loja. ");
-    		error.getMessage();
-
-    	}
-    }
 }

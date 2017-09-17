@@ -15,7 +15,7 @@ import server.model.Loja;
  */
 public class TelaCadastroLoja {
 
-    public void telaCadastroLoja(){
+    public void cadastroLoja(){
         Scanner tec = new Scanner(System.in);
         boolean retornoController;
         String nome;
@@ -50,8 +50,7 @@ public class TelaCadastroLoja {
             System.out.println("Nome do dono inválido");
             return;
         }
-        
-        Loja loja1 = new Loja(nome, login, telefone, senha, dono);
+        //ContaLoja loja1 = new Conta Loja(id); resolver questão do id
         ControllerLoja controller1 = new ControllerLoja();
         retornoController = controller1.cadastrar(loja1);
         if(retornoController == false){

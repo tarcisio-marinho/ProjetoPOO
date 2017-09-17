@@ -11,6 +11,6 @@ public class Server {
             menu.lerEntrada();
             menu.switchMenu();
     
-	}
+        }
     }
 }

@@ -2,11 +2,11 @@ package server.model;
 
 public class Produto {
     private String nome;
-    private int id;
+    private String id;
     private double preco;
     private String descricao;
-    
-    public Produto(int id, String nome, double preco, String descricao){
+
+    public Produto(String nome, String descricao, String id, double preco){
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
@@ -33,7 +33,7 @@ public class Produto {
         return this.preco;
     }
 
-    public int getId(){
+    public String getId(){
         return this.id;
     }
     

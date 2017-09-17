@@ -5,24 +5,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cardapio {
-    private String idLoja;
+    private String id;
     private List<Produto> produtos;
     
     public Cardapio(String idLoja){       
-        this.idLoja = idLoja;
-        this.produtos = new ArrayList<Produto>();
-    }
 
+        this.id = idLoja; // mesmo ID que Loja
+        this.produtos = new ArrayList<>();
+
+    }
+    
     public String getIdLoja() {
-        return idLoja;
+        return id;
     }
     
     public void addProduto(Produto produto){
-        //chama controller para adicionar
+       this.produtos.add(produto);
     }
     
-    public void removeProduto(int idProduto){
-        //chama controller para remover
+    public void removeProduto(String idProduto){
+       for(Produto produto : produtos){
+           if( produto.getId().equals(idProduto) ){
+               produtos.remove(produto);
+           }
+       }
     }  
     
     public Produto getProdutoPorID(int id){
