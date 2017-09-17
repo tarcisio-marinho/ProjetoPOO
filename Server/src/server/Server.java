@@ -7,10 +7,7 @@ public class Server {
         
         MenuPrincipal menu = new MenuPrincipal();
         while(menu.getOpcao() != 3){
-            menu.exibirMenu();
-            menu.lerEntrada();
-            menu.switchMenu();
-    
+            menu.exibirMenu();    
         }
     }
 }

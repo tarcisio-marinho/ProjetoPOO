@@ -1,22 +1,19 @@
-
 package server.views;
 
 import java.util.Scanner;
-import server.DAO.PedidoDAO;
-import server.controllers.ControllerCardapioCliente;
+import server.controllers.ControllerCardapio;
 import server.model.Cliente;
-import server.model.Pedido;
 
 public class TelaMenuCliente {
-   /// PedidoDAO banco = new PedidoDAO(); // O Q?? 
-    private ControllerCardapioCliente controllerC;
+    // PedidoDAO banco = new PedidoDAO(); // O Q?? 
+    private ControllerCardapio controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
     private Cliente c;
 
     TelaMenuCliente(Cliente c) {
-        controllerC = new ControllerCardapioCliente();
+        controllerC = new ControllerCardapio();
         this.c = c;
         this.escolha = 0;
     }
@@ -31,12 +28,13 @@ public class TelaMenuCliente {
     
     
     public void exibirMenu(){
-       while(this.escolha != 4){
-           System.out.println("1) Fazer pedido");
-           System.out.println("2) Checar pedido");
-           System.out.println("3) Ver Perfil");
+       while(this.escolha!=4){
+           System.out.println("1) Ver Lojas");
+           System.out.println("2) Checar seus pedidos");
+           System.out.println("3) Ver Seu Perfil");
            System.out.println("4) Sair");
            System.out.print("Digite uma opção:");
+           
            lerEntrada();
            switchMenu();
            

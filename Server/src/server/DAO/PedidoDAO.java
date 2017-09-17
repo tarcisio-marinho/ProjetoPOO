@@ -1,30 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package server.DAO;
+
 import java.util.ArrayList;
-import server.model.BancoDePedido;
 import server.model.Pedido;
 
-/**
- *
- * @author tarcisio
- */
 public class PedidoDAO {
-    private ArrayList<Pedido> pedidos;
+    private static ArrayList<Pedido> pedidos;
     
-    public void PedidoDAO(){
-        this.pedidos = null;
+    public PedidoDAO(){
+        pedidos = new ArrayList<>();
     }
     
     public void enviarPedido(Pedido p){
-        this.pedidos.add(p);
+        pedidos.add(p);
     }
     
     public void removerPedido(Pedido p){
-        this.pedidos.remove(p);
+        pedidos.remove(p);
     }
     
     public Pedido buscarPedido(int id){
@@ -37,7 +28,7 @@ public class PedidoDAO {
     }
     
     public Pedido existeNovoPedido(){
-        for (Pedido ped : this.pedidos){
+        for (Pedido ped : pedidos){
             /*if(ped.getAceito == false){
                 return ped;
             }*/

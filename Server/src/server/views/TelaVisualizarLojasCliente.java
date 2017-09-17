@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server.DAO;
+package server.views;
 
 /**
  *
- * @author flatio
+ * @author users
  */
-public class LoginDAO {
+public class TelaVisualizarLojasCliente {
     
 }

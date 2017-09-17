@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package server.DAO;
 
 import server.model.ContaLoja;
-import server.model.Loja;
 
-/**
- *
- * @author tarcisio
- */
 public class LojaDAO {
     private static int qtd;
     

@@ -17,6 +17,9 @@ public class MenuPrincipal implements InterfaceViews{
         System.out.println("2) CADASTRO");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
+        
+        lerEntrada();
+        switchMenu();
     }
 
     @Override
