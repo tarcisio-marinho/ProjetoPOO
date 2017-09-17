@@ -1,7 +1,5 @@
 package server.DAO;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import server.model.ContaCliente;
 import server.model.ContaLoja;
@@ -10,32 +8,30 @@ import server.model.ContaLoja;
 public class CadastroDAO {
 	//Nessa classe vamos usar polimorfismo de tipo, nesse caso sobre-carga
 	
-    private List<ClienteDAO> clientesDAO;
-    private List<LojaDAO> lojasDAO;
+    private ClienteDAO clienteDAO;
+    private LojaDAO lojasDAO;
 	
     public CadastroDAO() {
-    	this.clientesDAO = new ArrayList<>();
-    	this.lojasDAO = new ArrayList<>();
+    	this.clienteDAO = new ClienteDAO();
+    	this.lojasDAO = new LojaDAO();
     }
     
 
     
     public void add(ContaCliente contaCliente){
-		this.clientesDAO.add(contaCliente);		
+		this.clienteDAO.add(contaCliente);		
     }
     
-	public void removeCliente(int id) {
-		this.clientesDAO.remove(id);
+	public void removeCliente(int id) { // eu acho que nao precisa disso
+		this.clienteDAO.remove(id);
 	}
 	
     public boolean existe(ContaCliente contaCliente){
-        boolean resposta = false;
+        boolean resposta;
+       
         
-        for(ContaCliente conta : clientesDAO) {
-        	if(conta == contaCliente) {
-        		resposta = true;
-        	}
-        }
+        resposta = clienteDAO.existeLogin(contaCliente.getLogin());
+        
     	return resposta;    	
     }
     
@@ -45,22 +41,18 @@ public class CadastroDAO {
 		this.lojasDAO.add(contaLoja);		
     }
     
-	public void removeLoja(int id) {
+	public void removeLoja(int id) { //tb acho que nao vai precisar do remove
 		this.lojasDAO.remove(id);
 	}
 	
     public boolean existe(ContaLoja contaLoja){
         boolean resposta = false;
         
-        for(ContaLoja conta : lojasDAO) {
-        	if(conta == contaLoja) {
-        		resposta = true;
-        	}
-        }
+        resposta = lojasDAO.existeLogin(contaLoja.getLogin());
     	return resposta;    	
     }
-    
-    
-    
-    
+    public int qtdLojas(){
+        return this.lojasDAO.qtdLojas();
+    }
+
 }

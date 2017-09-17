@@ -7,8 +7,8 @@ package server.controllers;
 
 /**
  *
- * @author users
+ * @author flatio
  */
-public class ControllerCardapio {
+public class ControllerPedido {
     
 }

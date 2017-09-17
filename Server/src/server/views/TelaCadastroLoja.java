@@ -6,7 +6,9 @@
 package server.views;
 
 import java.util.Scanner;
+import server.controllers.ControllerCadastro;
 import server.controllers.ControllerLoja;
+import server.model.ContaLoja;
 import server.model.Loja;
 
 /**
@@ -51,8 +53,13 @@ public class TelaCadastroLoja {
             return;
         }
         //ContaLoja loja1 = new Conta Loja(id); resolver questão do id
-        ControllerLoja controller1 = new ControllerLoja();
-        retornoController = controller1.cadastrar(loja1);
+        ControllerCadastro controller1 = new ControllerCadastro();
+        
+        String idTemp = controller1.getIdNovaLoja();
+        
+        ContaLoja newLoja = new ContaLoja(idTemp,login,senha,nome,telefone,dono);
+        
+        retornoController = controller1.cadastrar(newLoja);
         if(retornoController == false){
             System.out.println("Cliente já cadastrado");
         }else{
