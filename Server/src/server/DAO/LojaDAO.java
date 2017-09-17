@@ -28,11 +28,11 @@ public class LojaDAO {
         return false;
     }
     
-    public Loja buscaLoja(String login){
+    public ContaLoja buscaLoja(String login){
         return null; // vai procurar no banco o cliente com aquele login e retornar o cliente
     }
     
-    public void remove(int id){ //acho que nao precisa de remover
+    public void remove(String id){ //acho que nao precisa de remover
         //return true;
     }
     public int qtdLojas(){

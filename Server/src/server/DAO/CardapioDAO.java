@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package server.DAO;
 
-/**
- *
- * @author flatio
- */
+package server.DAO;
+import server.model.Cardapio;
 public class CardapioDAO {
+    
+    private Cardapio cardapio = null;
+    
+    public Cardapio getCardapio(String id){
+        return cardapio;
+    }
+    
+    public void removeCardapio(String id){
+        
+    }
+    
+    public void addCardapio(Cardapio cardapio){
+        
+    }
     
 }

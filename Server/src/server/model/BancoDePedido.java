@@ -8,6 +8,16 @@ public class BancoDePedido {
     
 	private String id;
 	private List<Pedido> todosPedidos;
+        
+        public List novosPedidos(){
+            List<Pedido> novos = null;
+            for (Pedido pedido : todosPedidos){
+                if(pedido.isStatusVisualizado() == false){
+                    novos.add(pedido);
+                }
+            }
+            return novos;
+        }
 	
 	public BancoDePedido(String id) {		
 		this.id = id;

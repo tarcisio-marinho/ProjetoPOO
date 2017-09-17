@@ -6,7 +6,7 @@ public class Server {
     public static void main(String[] args) {
         
         MenuPrincipal menu = new MenuPrincipal();
-        while(true){
+        while(menu.getOpcao() != 3){
             menu.exibirMenu();
             menu.lerEntrada();
             menu.switchMenu();

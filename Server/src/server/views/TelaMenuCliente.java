@@ -16,9 +16,9 @@ public class TelaMenuCliente {
     private Cliente c;
 
     TelaMenuCliente(Cliente c) {
-        controllerC= new ControllerCardapioCliente();
+        controllerC = new ControllerCardapioCliente();
         this.c = c;
-        this.escolha=0;
+        this.escolha = 0;
     }
     
     private int getId(){
@@ -31,7 +31,7 @@ public class TelaMenuCliente {
     
     
     public void exibirMenu(){
-       while(this.escolha!=4){
+       while(this.escolha != 4){
            System.out.println("1) Fazer pedido");
            System.out.println("2) Checar pedido");
            System.out.println("3) Ver Perfil");
@@ -77,12 +77,5 @@ public class TelaMenuCliente {
         
         //Pedido pedido = new Pedido(cliente, produto);
        // banco.enviarPedido(pedido);
-    }
-    
-    
-    
-    private Pedido checarPedido(int idPedido){
-        
-        return banco.buscarPedido(idPedido);
     }
 }

@@ -28,5 +28,17 @@ public class ContaLoja extends Conta{
     public Loja getLoja(){
         return this.loja;
     }
+    
+    public void setNome(String nome){
+        this.loja.setNome(nome);
+    }
+    
+    public void setTelefone(String telefone){
+        this.loja.setTelefone(telefone);
+    }
+    
+    public void setNomeDono(String nome){
+        this.loja.setNomeDono(nome);
+    }
 
 }
