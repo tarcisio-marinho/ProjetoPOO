@@ -3,7 +3,7 @@ package server.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Conta{
+public class Cliente{
     private final List<Pedido> meusPedidos;
     
     

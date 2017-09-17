@@ -6,15 +6,11 @@ public class Produto {
     private double preco;
     private String descricao;
     
-    public Produto(String nome, String descricao, int id, double preco){
+    public Produto(int id, String nome, double preco, String descricao){
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
         this.id = id;
-    }
-
-    public void setNome(String nome){
-        this.nome = nome;
     }
     
     public void setPreco(float preco){
@@ -40,4 +36,6 @@ public class Produto {
     public int getId(){
         return this.id;
     }
+    
+    
 }

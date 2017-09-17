@@ -26,7 +26,7 @@ public class Item {
     	return this.precoUnidade;
     }
     
-    public double obterTotal(){
+    public double getPreco(){
         return this.precoUnidade * this.quantidade;
     }
 }

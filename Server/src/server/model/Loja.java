@@ -4,7 +4,7 @@ package server.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Loja extends Conta{
+public class Loja{
 
     private static int idInc = 0;
     
