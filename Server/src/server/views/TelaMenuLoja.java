@@ -5,17 +5,18 @@
  */
 package server.views;
 import java.util.Scanner;
+import server.model.ContaLoja;
 import server.model.Loja;
 /**
  *
  * @author tarcisio
  */
 public class TelaMenuLoja {
-    private final Loja loja;
+    private final ContaLoja loja;
     private int escolha;
     private Scanner entrada;
     
-    public TelaMenuLoja(Loja loja){
+    public TelaMenuLoja(ContaLoja loja){
         this.loja = loja;
     }
     
@@ -57,9 +58,10 @@ public class TelaMenuLoja {
     }
     
     public void verPerfil(){
-        System.out.println("Nome loja: " + loja.getNome());
-        System.out.println("Nome dono: " + loja.getNomeDono());
-        System.out.println("telefone: " + loja.getTelefone());
+        Loja l = loja.getLoja();
+        System.out.println("Nome loja: " + l.getNome());
+        System.out.println("Nome dono: " + l.getNomeDono());
+        System.out.println("telefone: " + l.getTelefone());
         System.out.println("Login da loja: " + loja.getLogin());
     }
 }
