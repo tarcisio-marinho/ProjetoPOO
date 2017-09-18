@@ -63,4 +63,17 @@ public class PedidoDAO {
             }
         }
     }
+    
+    // cliente na view tem que ter um array de ID'S dos pedidos
+    public ArrayList<Pedido> getPedidosCliente(ArrayList<String> ids){ // cliente vai pegar todos os pedidos dele
+        ArrayList <Pedido> todosPedidos = null;
+        for(String id : ids){
+            for (Pedido p : pedidos){
+                if(id.equals(p.getId())){
+                    todosPedidos.add(p);
+                }
+            }
+        }
+        return todosPedidos;
+    }
 }
