@@ -1,31 +1,52 @@
 package server.DAO;
 
+import java.util.ArrayList;
 import server.model.ContaLoja;
 
 public class LojaDAO {
     private static int qtd;
+    private ArrayList<ContaLoja> lojas;
     
-    public boolean buscaLogin(String login, String senha){ // BUSCA SE A CONTA EXISTE
-        return false;
+    public LojaDAO(){
+        this.qtd = 0;
+        this.lojas = null;
     }
     
     public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
-        return false;
+        for (ContaLoja l : lojas){
+            if(l.getLogin().equals(login)){
+                return false;
+            }
+        }
+        return true;
     }
     
-    public boolean add(ContaLoja j){ //a verificacao de existencia eh feita já no controller
-        LojaDAO.qtd++;
-        return false;
-    }
     
     public ContaLoja buscaLoja(String login){
-        return null; // vai procurar no banco o cliente com aquele login e retornar o cliente
+        for (ContaLoja l : lojas){
+            if(l.getLogin().equals(login)){
+                return l;
+            }
+        }
+        return null;
     }
     
-    public void remove(String id){ //acho que nao precisa de remover
-        //return true;
+    public boolean remove(String id){ //acho que nao precisa de remover
+        for (ContaLoja l : lojas){
+            if(l.getId().equals(id)){
+                lojas.remove(l);
+                return true;
+            }
+        }
+        return false;
     }
+    
     public int qtdLojas(){
-        return LojaDAO.qtd;
+        return this.qtd;
+    }
+    
+    public void cadastrarLoja(ContaLoja loja){
+        lojas.add(loja);
+        qtd++;
     }
 }
