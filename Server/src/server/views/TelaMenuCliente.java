@@ -4,14 +4,13 @@ import java.util.Scanner;
 import server.controllers.ControllerCardapio;
 import server.model.Cliente;
 
-public class TelaMenuCliente {
-    // PedidoDAO banco = new PedidoDAO(); // O Q?? 
+public class TelaMenuCliente { 
     private ControllerCardapio controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
     private Cliente c;
-
+    
     TelaMenuCliente(Cliente c) {
         controllerC = new ControllerCardapio();
         this.c = c;
@@ -25,7 +24,6 @@ public class TelaMenuCliente {
     private void setId(int id){
         this.idPedido = id;
     }
-    
     
     public void exibirMenu(){
        while(this.escolha!=4){
@@ -47,22 +45,22 @@ public class TelaMenuCliente {
     }
     public void switchMenu(){
         switch (this.escolha){
-               case 1:
-                   fazerPedido();
-                   break;
-               case 2:
-                   checarPedido(idPedido);
-                   break;
-               case 3:
-                   //verPerfil();
-                   //break;
-               case 4:
-                   return;
+            case 1:
+               TelaVisualizarLojasCliente tvl = new TelaVisualizarLojasCliente(); //criar uma variavel apenas para chamar as telas, pode ser outro nome
+                break;
+            case 2:
+                //checarPedido(idPedido);
+                break;
+            case 3:
+                //verPerfil();
+                //break;
+            case 4:
+                return;
 
-               default:
-                   System.out.println("Opção inválida");
-                   break;
-           }
+            default:
+                System.out.println("Opção inválida");
+                break;
+        }
     }
     
     
