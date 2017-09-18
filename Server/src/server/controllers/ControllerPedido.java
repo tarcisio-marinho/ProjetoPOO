@@ -1,20 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package server.controllers;
 
+import java.util.ArrayList;
 import server.DAO.PedidoDAO;
+import server.model.BancoDePedido;
+import server.model.Pedido;
 
-/**
- *
- * @author flatio
- */
 public class ControllerPedido {
-    private PedidoDAO dao;
+        
+    private static ArrayList<BancoDePedido> bancos = new ArrayList<>();
     
+    public void remove(String id){
+        for( Pedido pedido : PedidoDAO.getTodosPedidos(id) ){
+            
+            if( pedido.getId().equals(id) ){
+                PedidoDAO.remove(pedido);
+            }
+            
+        }
+    }
     
-    
-    
+    public void add(Pedido pedido){
+        for(BancoDePedido banco : bancos){
+            if( banco.getId().equals(pedido.getReferenciaLoja()) ) {
+                
+            }
+        }
+    }
+        
 }
