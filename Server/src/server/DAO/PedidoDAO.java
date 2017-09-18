@@ -35,10 +35,10 @@ public class PedidoDAO {
         return null;
     }
     
-    public static ArrayList<Pedido> novosPedidos(String id){ // retorna para a loja os novos pedidos e altera o status para vizualizado
+    public static ArrayList<Pedido> buscaNovosPedidos(String id){ // retorna para a loja os novos pedidos e altera o status para vizualizado
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
-                return b.novosPedidos();
+                return b.buscaNovosPedidos();
             }
         }
         return null;

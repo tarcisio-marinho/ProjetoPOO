@@ -13,7 +13,7 @@ public class BancoDePedido {
         return this.id;
     }
     
-    public ArrayList<Pedido> novosPedidos(){
+    public ArrayList<Pedido> buscaNovosPedidos(){
         ArrayList<Pedido> novos = null;
         for (Pedido pedido : todosPedidos){
             if(pedido.isStatusVisualizado() == false){
