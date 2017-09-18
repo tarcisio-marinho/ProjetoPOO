@@ -34,4 +34,8 @@ public class LojaDAO {
         lojas.add(loja);
         qtd++;
     }
+    
+    public ArrayList<ContaLoja> getLojas(){ // cliente vai receber todas as lojas
+        return LojaDAO.lojas;
+    }
 }
