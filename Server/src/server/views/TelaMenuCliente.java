@@ -3,15 +3,16 @@ package server.views;
 import java.util.Scanner;
 import server.controllers.ControllerCardapio;
 import server.model.Cliente;
+import server.model.ContaCliente;
 
 public class TelaMenuCliente { 
     private ControllerCardapio controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
-    private Cliente c;
+    private ContaCliente c;
     
-    TelaMenuCliente(Cliente c) {
+    TelaMenuCliente(ContaCliente c) {
         controllerC = new ControllerCardapio();
         this.c = c;
         this.escolha = 0;
@@ -64,14 +65,5 @@ public class TelaMenuCliente {
     }
     
     
-    private void fazerPedido(){
-        controllerC.listarLojas();
-        
-        
-        
-        System.out.print("Cod. Produto: ");
-        
-        //Pedido pedido = new Pedido(cliente, produto);
-       // banco.enviarPedido(pedido);
-    }
+    
 }
