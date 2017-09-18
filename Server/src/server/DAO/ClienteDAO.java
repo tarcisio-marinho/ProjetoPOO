@@ -7,7 +7,7 @@ import server.model.ContaCliente;
 public class ClienteDAO {
     private static ArrayList<ContaCliente> clientes = new ArrayList<>();
     
-    public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
+    public static boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
         for (ContaCliente c : clientes){
             if(c.getLogin().equals(login)){
                 return true;
@@ -17,7 +17,7 @@ public class ClienteDAO {
     }
     
     
-    public ContaCliente buscaDadosCliente(String login){
+    public static ContaCliente buscaDadosCliente(String login){
         for (ContaCliente c : clientes){
             if(c.getLogin().equals(login)){
                 return c;
@@ -27,7 +27,7 @@ public class ClienteDAO {
     }
     
     
-    public void cadastrarCliente(ContaCliente cliente){
+    public static void cadastrarCliente(ContaCliente cliente){
         clientes.add(cliente);
     }
 }

@@ -8,7 +8,7 @@ public class PedidoDAO {
     private static ArrayList<BancoDePedido> banco = new ArrayList<>();
     
     
-    public void novoPedido(Pedido p){ // cliente vai acessar o DAO e fazer pedido
+    public static void novoPedido(Pedido p){ // cliente vai acessar o DAO e fazer pedido
         for (BancoDePedido b : banco){
             if(p.getId().substring(0,2).equals(b.getId())){
                 b.addPedido(p);
@@ -17,7 +17,7 @@ public class PedidoDAO {
         }
     }
     
-    public void removerPedido(Pedido p){ // loja remove pedido pronto
+    public static void removerPedido(Pedido p){ // loja remove pedido pronto
         for (BancoDePedido b : banco){
             if(p.getId().substring(0,2).equals(b.getId())){
                 b.removerPedido(p.getId());
@@ -26,7 +26,7 @@ public class PedidoDAO {
         }
     }
     
-    public Pedido buscarPedido(String id){ // loja busca por um pedido especifico
+    public static Pedido buscarPedido(String id){ // loja busca por um pedido especifico
         for (BancoDePedido b : banco){
             if(b.getId().substring(0,2).equals(b.getId())){
                 return b.buscarPedido(id);
@@ -35,7 +35,7 @@ public class PedidoDAO {
         return null;
     }
     
-    public ArrayList<Pedido> novosPedidos(String id){ // retorna para a loja os novos pedidos e altera o status para vizualizado
+    public static ArrayList<Pedido> novosPedidos(String id){ // retorna para a loja os novos pedidos e altera o status para vizualizado
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
                 return b.novosPedidos();
@@ -44,7 +44,7 @@ public class PedidoDAO {
         return null;
     }
     
-    public ArrayList<Pedido> getTodosPedidos(String id){ // loja pega todos os pedidos
+    public static ArrayList<Pedido> getTodosPedidos(String id){ // loja pega todos os pedidos
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
                 return b.getTodosPedidos();
@@ -53,7 +53,7 @@ public class PedidoDAO {
         return null;
     }
     
-    public void setPedidoPronto(String id){ // loja vai dizer que ja terminou
+    public static void setPedidoPronto(String id){ // loja vai dizer que ja terminou
         for (BancoDePedido b : banco){
             if(id.substring(0,2).equals(b.getId())){
                 b.setPedidoPronto(id);
@@ -62,7 +62,7 @@ public class PedidoDAO {
         }
     }
     
-    public boolean isPedidoPronto(String id){ // cliente vai ficar perguntando se o pedido esta pronto
+    public static boolean isPedidoPronto(String id){ // cliente vai ficar perguntando se o pedido esta pronto
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
                 return b.isPedidoPronto(id);
@@ -71,7 +71,7 @@ public class PedidoDAO {
         return false;
     }
     
-    public void setPedidoEntregue(String id){ // cliente que vai dizer que ja pegou
+    public static void setPedidoEntregue(String id){ // cliente que vai dizer que ja pegou
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
                 b.setPedidoEntregue(id);
