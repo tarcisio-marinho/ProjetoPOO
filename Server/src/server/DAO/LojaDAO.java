@@ -5,7 +5,7 @@ import server.model.ContaLoja;
 
 public class LojaDAO {
     private static int qtd;
-    private static ArrayList<ContaLoja> lojas;
+    private static ArrayList<ContaLoja> lojas =  new ArrayList<>();
     
     public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
         for (ContaLoja l : lojas){

@@ -2,9 +2,10 @@ package server.DAO;
 
 import java.util.ArrayList;
 import server.model.Pedido;
+import server.model.BancoDePedido;
 
 public class PedidoDAO {
-    private static ArrayList<Pedido> pedidos;
+    private static ArrayList<BancoDePedido> banco = new ArrayList<>();
     
     public void novoPedido(Pedido p){ // cliente vai acessar o DAO e fazer pedido
         pedidos.add(p);
@@ -29,6 +30,7 @@ public class PedidoDAO {
             if(ped.isStatusVisualizado() == false){
                 ped.setStatusVisualizado();
                 novos.add(ped);
+                break;
             }
         }
         return novos;
@@ -42,6 +44,7 @@ public class PedidoDAO {
         for(Pedido p : pedidos){
             if(p.getId().equals(id)){
                 p.setStatusPronto();
+                break;
             }
         }
     }
@@ -60,6 +63,7 @@ public class PedidoDAO {
             if(p.getId().equals(id)){
                 p.setStatusEntregue();
                 removerPedido(p);
+                break;
             }
         }
     }

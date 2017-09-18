@@ -2,15 +2,14 @@
 package server.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BancoDePedido {
     
 	private String id;
-	private List<Pedido> todosPedidos;
+	private ArrayList<Pedido> todosPedidos;
         
-        public List novosPedidos(){
-            List<Pedido> novos = null;
+        public ArrayList<Pedido> novosPedidos(){
+            ArrayList<Pedido> novos = null;
             for (Pedido pedido : todosPedidos){
                 if(pedido.isStatusVisualizado() == false){
                     novos.add(pedido);
@@ -32,7 +31,7 @@ public class BancoDePedido {
 		this.id = id;
 	}
 
-	public List<Pedido> getTodosPedidos() {
+	public ArrayList<Pedido> getTodosPedidos() {
 		return this.todosPedidos;
 	}
 
@@ -41,13 +40,13 @@ public class BancoDePedido {
 	}
 	
 	public boolean removePedido(String id) {
-		boolean objeto = false;
-		for(Pedido pedido : todosPedidos) {
-			if(pedido.getId().equals(id)) {
-				objeto = todosPedidos.remove(pedido);
-			}
-		}
-		return objeto;		
+            boolean objeto = false;
+            for(Pedido pedido : todosPedidos) {
+                    if(pedido.getId().equals(id)) {
+                            objeto = todosPedidos.remove(pedido);
+                    }
+            }
+            return objeto;		
 	}
 	
 	

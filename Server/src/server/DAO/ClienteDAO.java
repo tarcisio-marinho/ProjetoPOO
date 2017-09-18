@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import server.model.ContaCliente;
 
 public class ClienteDAO {
-    private static ArrayList<ContaCliente> clientes;
+    private static ArrayList<ContaCliente> clientes = new ArrayList<>();
     
     public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
         for (ContaCliente c : clientes){
