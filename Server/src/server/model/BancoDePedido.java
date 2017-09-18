@@ -8,23 +8,29 @@ public class BancoDePedido {
     private String id;
     private ArrayList<Pedido> todosPedidos;
 
+    
+    public String getId(){
+        return this.id;
+    }
+    
     public ArrayList<Pedido> novosPedidos(){
         ArrayList<Pedido> novos = null;
         for (Pedido pedido : todosPedidos){
             if(pedido.isStatusVisualizado() == false){
+                pedido.setStatusVisualizado();
                 novos.add(pedido);
             }
         }
         return novos;
     }
-
-    public BancoDePedido(String id) {	
-            this.id = id;
-            this.todosPedidos = new ArrayList<>();
-    }
-
-    public String getId() {
-            return this.id;
+    
+    public Pedido buscarPedido(String id){
+        for(Pedido p : todosPedidos){
+            if(id.equals(p.getId())){
+                return p;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Pedido> getTodosPedidos() {
@@ -35,13 +41,38 @@ public class BancoDePedido {
             this.todosPedidos.add(pedido);
     }
 
-    public boolean removePedido(String id) {
-        boolean objeto = false;
+    public void removerPedido(String id) {
         for(Pedido pedido : todosPedidos) {
             if(pedido.getId().equals(id)) {
-                objeto = todosPedidos.remove(pedido);
+                todosPedidos.remove(pedido);
+                break;
             }
         }
-        return objeto;		
+    }
+    
+    public void setPedidoPronto(String id){
+        for (Pedido p : todosPedidos){
+            if(p.getId().equals(id)){
+                p.setStatusPronto();
+            }
+        }
+    }
+    
+    public boolean isPedidoPronto(String id){
+        for (Pedido p : todosPedidos){
+            if(id.equals(p.getId())){
+                return p.isStatusPronto();
+            }
+        }
+        return false;
+    }
+    
+    public void setPedidoEntregue(String id){
+        for (Pedido p : todosPedidos){
+            if(id.equals(p.getId())){
+                p.setStatusEntregue();
+                removerPedido(id);
+            }
+        }
     }
 }

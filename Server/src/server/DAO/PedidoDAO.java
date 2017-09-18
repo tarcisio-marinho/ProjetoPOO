@@ -9,76 +9,73 @@ public class PedidoDAO {
     
     
     public void novoPedido(Pedido p){ // cliente vai acessar o DAO e fazer pedido
-        pedidos.add(p);
+        for (BancoDePedido b : banco){
+            if(p.getId().substring(0,2).equals(b.getId())){
+                b.addPedido(p);
+                break;
+            }
+        }
     }
     
     public void removerPedido(Pedido p){ // loja remove pedido pronto
-        pedidos.remove(p);
+        for (BancoDePedido b : banco){
+            if(p.getId().substring(0,2).equals(b.getId())){
+                b.removerPedido(p.getId());
+                break;
+            }
+        }
     }
     
     public Pedido buscarPedido(String id){ // loja busca por um pedido especifico
-        for (Pedido ped : pedidos){
-            if(ped.getId().equals(id)){
-                return ped;
+        for (BancoDePedido b : banco){
+            if(b.getId().substring(0,2).equals(b.getId())){
+                return b.buscarPedido(id);
             }
         }
         return null;
     }
     
-    public ArrayList<Pedido> novosPedidos(){ // retorna para a loja os novos pedidos e altera o status para vizualizado
-        ArrayList<Pedido> novos = null;
-        for (Pedido ped : pedidos){
-            if(ped.isStatusVisualizado() == false){
-                ped.setStatusVisualizado();
-                novos.add(ped);
-                break;
+    public ArrayList<Pedido> novosPedidos(String id){ // retorna para a loja os novos pedidos e altera o status para vizualizado
+        for (BancoDePedido b : banco){
+            if(id.equals(b.getId())){
+                return b.novosPedidos();
             }
         }
-        return novos;
+        return null;
     }
     
-    public ArrayList<Pedido> getTodosPedidos(){ // loja pega todos os pedidos
-        return PedidoDAO.pedidos;
+    public ArrayList<Pedido> getTodosPedidos(String id){ // loja pega todos os pedidos
+        for (BancoDePedido b : banco){
+            if(id.equals(b.getId())){
+                return b.getTodosPedidos();
+            }
+        }
+        return null;
     }
     
     public void setPedidoPronto(String id){ // loja vai dizer que ja terminou
-        for(Pedido p : pedidos){
-            if(p.getId().equals(id)){
-                p.setStatusPronto();
+        for (BancoDePedido b : banco){
+            if(id.substring(0,2).equals(b.getId())){
+                b.setPedidoPronto(id);
                 break;
             }
         }
     }
     
     public boolean isPedidoPronto(String id){ // cliente vai ficar perguntando se o pedido esta pronto
-        for(Pedido p : pedidos){
-            if(p.getId().equals(id) && p.isStatusPronto() == true){
-                return true;
+        for (BancoDePedido b : banco){
+            if(id.equals(b.getId())){
+                return b.isPedidoPronto(id);
             }
         }
         return false;
     }
     
     public void setPedidoEntregue(String id){ // cliente que vai dizer que ja pegou
-        for(Pedido p : pedidos){
-            if(p.getId().equals(id)){
-                p.setStatusEntregue();
-                removerPedido(p);
-                break;
+        for (BancoDePedido b : banco){
+            if(id.equals(b.getId())){
+                b.setPedidoEntregue(id);
             }
         }
-    }
-    
-    // cliente na view tem que ter um array de ID'S dos pedidos
-    public ArrayList<Pedido> getPedidosCliente(ArrayList<String> ids){ // cliente vai pegar todos os pedidos dele
-        ArrayList <Pedido> todosPedidos = null;
-        for(String id : ids){
-            for (Pedido p : pedidos){
-                if(id.equals(p.getId())){
-                    todosPedidos.add(p);
-                }
-            }
-        }
-        return todosPedidos;
     }
 }
