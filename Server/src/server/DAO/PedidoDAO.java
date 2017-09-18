@@ -6,11 +6,7 @@ import server.model.Pedido;
 public class PedidoDAO {
     private static ArrayList<Pedido> pedidos;
     
-    public PedidoDAO(){
-        pedidos = new ArrayList<>();
-    }
-    
-    public void enviarPedido(Pedido p){
+    public void novoPedido(Pedido p){
         pedidos.add(p);
     }
     
@@ -18,11 +14,11 @@ public class PedidoDAO {
         pedidos.remove(p);
     }
     
-    public Pedido buscarPedido(int id){
+    public Pedido buscarPedido(String id){
         for (Pedido ped : pedidos){
-           /* if(id == ped.getId){ // implementar classe pedidos
+            if(ped.getId().equals(id)){ // implementar classe pedidos
                 return ped;
-            }*/
+            }
         }
         return null;
     }

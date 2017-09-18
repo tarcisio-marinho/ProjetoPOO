@@ -1,19 +1,33 @@
 
 package server.DAO;
 
-import java.util.List;
-import server.model.Cliente;
+import java.util.ArrayList;
+import server.model.ContaCliente;
 
 public class ClienteDAO {
-
-    private List<Cliente> listaCliente;
+    private static ArrayList<ContaCliente> clientes;
     
-    public boolean buscaLogin(String login, String senha){ //buscar no banco se cliente existe 
+    public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
+        for (ContaCliente c : clientes){
+            if(c.getLogin().equals(login)){
+                return true;
+            }
+        }
         return false;
     }
     
-    public boolean removeCliente(String id){ // remove cliente da lista pesquisando pelo ID
-        return false;
+    
+    public ContaCliente buscaDadosCliente(String login){
+        for (ContaCliente c : clientes){
+            if(c.getLogin().equals(login)){
+                return c;
+            }
+        }
+        return null;
     }
     
+    
+    public void cadastrarCliente(ContaCliente cliente){
+        clientes.add(cliente);
+    }
 }
