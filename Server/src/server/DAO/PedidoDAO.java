@@ -7,6 +7,7 @@ import server.model.BancoDePedido;
 public class PedidoDAO {
     private static ArrayList<BancoDePedido> banco = new ArrayList<>();
     
+    
     public void novoPedido(Pedido p){ // cliente vai acessar o DAO e fazer pedido
         pedidos.add(p);
     }
