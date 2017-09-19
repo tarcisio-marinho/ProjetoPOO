@@ -9,14 +9,32 @@ import server.model.ContaLoja;
 
 public class ControllerCadastro {
 
-    public boolean cadastrar(ContaCliente contaCliente){
-        
+    public void cadastrar(ContaCliente contaCliente){
+        ClienteDAO.cadastrarCliente(contaCliente);
     }
     
-    public boolean cadastrar(ContaLoja contaLoja){
-        
+    public boolean existeLoginCliente(String login){
+        return ClienteDAO.existeLogin(login);
+    }
+            
+    public void cadastrar(ContaLoja contaLoja){
+        LojaDAO.cadastrarLoja(contaLoja);
     }
     
-    public String getIdNovaLoja(){ //usa o dao para descobrir quantas lojas existem
+    public boolean existeLoginLoja(String login){
+        return LojaDAO.existeLogin(login);
+    }
+    
+    public boolean existeNomeDono(ContaLoja l){
+        return LojaDAO.existeNomeDono(l);
+    }
+    
+    public boolean existeNomeLoja(ContaLoja l){
+        return LojaDAO.existeNomeLoja(l);
+    }
+    
+    public boolean existeTelefoneLoja(ContaLoja l){
+        return LojaDAO.existeTelefone(l);
+    }
         
 }

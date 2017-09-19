@@ -16,16 +16,7 @@ public class PedidoDAO {
             }
         }
     }
-    
-    public static void removerPedido(Pedido p){ // loja remove pedido pronto
-        for (BancoDePedido b : banco){
-            if(p.getId().substring(0,2).equals(b.getId())){
-                b.removerPedido(p.getId());
-                break;
-            }
-        }
-    }
-    
+
     public static Pedido buscarPedido(String id){ // loja busca por um pedido especifico
         for (BancoDePedido b : banco){
             if(b.getId().substring(0,2).equals(b.getId())){
@@ -75,6 +66,7 @@ public class PedidoDAO {
         for (BancoDePedido b : banco){
             if(id.equals(b.getId())){
                 b.setPedidoEntregue(id);
+                banco.remove(b);
             }
         }
     }

@@ -40,15 +40,6 @@ public class BancoDePedido {
     public void addPedido(Pedido pedido) {
             this.todosPedidos.add(pedido);
     }
-
-    public void removerPedido(String id) {
-        for(Pedido pedido : todosPedidos) {
-            if(pedido.getId().equals(id)) {
-                todosPedidos.remove(pedido);
-                break;
-            }
-        }
-    }
     
     public void setPedidoPronto(String id){
         for (Pedido p : todosPedidos){
