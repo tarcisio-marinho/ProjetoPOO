@@ -8,7 +8,7 @@ public class ContaLoja extends Conta{
     public ContaLoja(String id, String login, String senha, String nome, String telefone, String dono) {
         this.loja = new Loja(nome, telefone, dono);
         this.id = id;
-        this.cardapio = new Cardapio(id);
+        this.cardapio = new Cardapio();
         super.setLogin(login);
         super.setSenha(senha);
     }
