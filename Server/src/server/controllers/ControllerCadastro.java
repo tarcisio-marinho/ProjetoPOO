@@ -16,6 +16,10 @@ public class ControllerCadastro {
     public boolean existeLoginCliente(String login){
         return ClienteDAO.existeLogin(login);
     }
+    
+    public boolean existeTelefoneCliente(String telefone){
+        return ClienteDAO.existeTelefoneCliente(telefone);
+    }
             
     public void cadastrar(ContaLoja contaLoja){
         LojaDAO.cadastrarLoja(contaLoja);
@@ -25,16 +29,16 @@ public class ControllerCadastro {
         return LojaDAO.existeLogin(login);
     }
     
-    public boolean existeNomeDono(ContaLoja l){
-        return LojaDAO.existeNomeDono(l);
+    public boolean existeNomeDono(String nome){
+        return LojaDAO.existeNomeDono(nome);
     }
     
-    public boolean existeNomeLoja(ContaLoja l){
-        return LojaDAO.existeNomeLoja(l);
+    public boolean existeNomeLoja(String nome){
+        return LojaDAO.existeNomeLoja(nome);
     }
     
-    public boolean existeTelefoneLoja(ContaLoja l){
-        return LojaDAO.existeTelefone(l);
+    public boolean existeTelefoneLoja(String telefone){
+        return LojaDAO.existeTelefone(telefone);
     }
         
 }

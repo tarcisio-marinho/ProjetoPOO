@@ -37,8 +37,7 @@ public class LojaDAO {
         return LojaDAO.lojas;
     }
     
-    public static boolean existeTelefone(ContaLoja l){
-        String telefone = l.getTelefone();
+    public static boolean existeTelefone(String telefone){
         for (ContaLoja loja : lojas){
             if(loja.getTelefone().equals(telefone)){
                 return true;
@@ -47,8 +46,7 @@ public class LojaDAO {
         return false;
     }
     
-    public static boolean existeNomeLoja(ContaLoja l){
-        String nome = l.getNome();
+    public static boolean existeNomeLoja(String nome){
         for (ContaLoja loja : lojas){
             if(loja.getNome().equals(nome)){
                 return true;
@@ -57,8 +55,7 @@ public class LojaDAO {
         return false;
     }
     
-    public static boolean existeNomeDono(ContaLoja l){
-        String nome = l.getNomeDono();
+    public static boolean existeNomeDono(String nome){
         for (ContaLoja loja : lojas){
             if(loja.getNome().equals(nome)){
                 return true;

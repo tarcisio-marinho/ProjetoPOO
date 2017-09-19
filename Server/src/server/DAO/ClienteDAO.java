@@ -30,4 +30,13 @@ public class ClienteDAO {
     public static void cadastrarCliente(ContaCliente cliente){
         clientes.add(cliente);
     }
+    
+    public static boolean existeTelefoneCliente(String telefone){
+        for(ContaCliente conta : clientes){
+            if(conta.getTelefone().equals(telefone)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
