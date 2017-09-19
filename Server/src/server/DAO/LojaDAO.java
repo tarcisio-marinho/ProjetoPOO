@@ -2,6 +2,7 @@ package server.DAO;
 
 import java.util.ArrayList;
 import server.model.ContaLoja;
+import server.model.Produto;
 
 public class LojaDAO {
     private static ArrayList<ContaLoja> lojas =  new ArrayList<>();

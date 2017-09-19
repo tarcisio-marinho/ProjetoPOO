@@ -7,17 +7,7 @@ import server.model.ContaCliente;
 public class ClienteDAO {
     private static ArrayList<ContaCliente> clientes = new ArrayList<>();
     
-    public static boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
-        for (ContaCliente c : clientes){
-            if(c.getLogin().equals(login)){
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    
-    public static ContaCliente buscaDadosCliente(String login){
+    public ContaCliente buscar(String login){
         for (ContaCliente c : clientes){
             if(c.getLogin().equals(login)){
                 return c;
@@ -26,17 +16,19 @@ public class ClienteDAO {
         return null;
     }
     
-    
-    public static void cadastrarCliente(ContaCliente cliente){
-        clientes.add(cliente);
+    public void inserir(ContaCliente c){
+        clientes.add(c);
     }
     
-    public static boolean existeTelefoneCliente(String telefone){
-        for(ContaCliente conta : clientes){
-            if(conta.getTelefone().equals(telefone)){
-                return true;
+    public void remover(String login){
+        for (ContaCliente c: clientes){
+            if(c.getLogin().equals(login)){
+                clientes.remove(c);
             }
         }
-        return false;
+    }
+    
+    public ArrayList<ContaCliente> getTodos(){
+        return ClienteDAO.clientes;
     }
 }

@@ -1,19 +1,19 @@
 package server.views;
 
 import java.util.Scanner;
-import server.controllers.ControllerCardapio;
+import server.controllers.ADSAADS;
 import server.model.Cliente;
 import server.model.ContaCliente;
 
 public class TelaMenuCliente { 
-    private ControllerCardapio controllerC;
+    private ADSAADS controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
     private ContaCliente c;
     
     TelaMenuCliente(ContaCliente c) {
-        controllerC = new ControllerCardapio();
+        controllerC = new ADSAADS();
         this.c = c;
         this.escolha = 0;
     }

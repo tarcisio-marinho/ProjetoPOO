@@ -2,11 +2,10 @@ package server.model;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Cardapio {
     private String id;
-    private List<Produto> produtos;
+    private ArrayList<Produto> produtos;
     
     public Cardapio(String idLoja){       
 
@@ -35,7 +34,7 @@ public class Cardapio {
         return produtos.get(id);
     }
     
-    public List<Produto> getProdutos(){
+    public ArrayList<Produto> getProdutos(){
     	return this.produtos;
     }
 }
