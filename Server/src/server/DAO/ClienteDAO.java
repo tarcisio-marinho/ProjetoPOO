@@ -1,27 +1,34 @@
+
 package server.DAO;
-import server.model.Cliente;
+
+import java.util.ArrayList;
 import server.model.ContaCliente;
 
 public class ClienteDAO {
+    private static ArrayList<ContaCliente> clientes = new ArrayList<>();
     
-    public boolean buscaLogin(String login, String senha){ // BUSCA SE A CONTA EXISTE
-        return false;
+    public static ContaCliente buscar(String login){
+        for (ContaCliente c : clientes){
+            if(c.getLogin().equals(login)){
+                return c;
+            }
+        }
+        return null;
     }
     
-    public boolean existeLogin(String login){ // BUSCA SE LOGIN JA TA CADASTRADO
-        return false;
+    public static void inserir(ContaCliente c){
+        clientes.add(c);
     }
     
-    public void add(ContaCliente cliente){ //nao precisa verificar a existencia do login aqui
-        //return true;
-        
+    public static void remover(String login){
+        for (ContaCliente c: clientes){
+            if(c.getLogin().equals(login)){
+                clientes.remove(c);
+            }
+        }
     }
     
-    public Cliente buscaCliente(String login){
-        return null; // vai procurar no banco o cliente com aquele login e retornar o cliente
-    }
-    
-    public void remove(int id){ //criei apenas pra acabar com o erros , mas acho q nao precisa
-        
+    public static ArrayList<ContaCliente> getTodos(){
+        return ClienteDAO.clientes;
     }
 }

@@ -1,32 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package server.views;
 
 import java.util.Scanner;
 
-/**
- *
- * @author users
- */
-public class TelaCadastro {
+public class TelaCadastro implements InterfaceViews{
 
     private Scanner entrada;
     private int escolha;
 
 
+    @Override
     public void exibirMenu() {
         System.out.println("1) Cadastro Cliente");
         System.out.println("2) Cadastro Loja");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
+        lerEntrada();
+        switchMenu();
     }
 
     public void lerEntrada() {
         this.entrada = new Scanner(System.in);
         this.escolha = entrada.nextInt();
+        entrada.close();
         System.gc();
     }
 
@@ -50,4 +46,3 @@ public class TelaCadastro {
     }
 
 }
-

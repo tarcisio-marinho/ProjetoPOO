@@ -11,23 +11,40 @@ public class ControllerLoja {
         this.dao = new LojaDAO();
     }
     
-    public boolean logar(String login, String senha){
-        return this.dao.buscaLogin(login, senha);
-    }
+    public void alterarNomeDono(String id, String nome){
+        ContaLoja loja;
+        loja = dao.buscaLoja(id);
+        loja.setNomeDono(nome);
+        dao.remove(id);
+        dao.add(loja);
+    } 
     
-    public boolean cadastrar(ContaLoja loja1){
-        boolean retorno;
-        retorno = this.dao.existeLogin(loja1.getLogin());
-        if(retorno == false){
-            this.dao.add(loja1);
-            return true;
-        }else{
-            return false;
-        }
-    }
+    public void alterarNome(String id, String nome){
+        ContaLoja loja;
+        loja = dao.buscaLoja(id);
+        loja.setNome(nome);
+        dao.remove(id);
+        dao.add(loja);
+    } 
     
-    public Loja buscarDados(String login){
-        Loja c;
+    public void alterarTelefone(String id, String telefone){
+        ContaLoja loja;
+        loja = dao.buscaLoja(id);
+        loja.setTelefone(telefone);
+        dao.remove(id);
+        dao.add(loja);
+    } 
+    
+    public void alterarSenha(String id, String senha){
+        ContaLoja loja;
+        loja = dao.buscaLoja(id);
+        loja.setSenha(senha);
+        dao.remove(id);
+        dao.add(loja);
+    } 
+            
+    public ContaLoja buscarDados(String login){
+        ContaLoja c;
         c = dao.buscaLoja(login);
         return c;
     }

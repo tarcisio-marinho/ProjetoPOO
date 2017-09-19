@@ -3,11 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/views/TelaMenuLoja.java</file>
-            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/LojaDAO.java</file>
-            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/CadastroDAO.java</file>
-            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/model/ContaLoja.java</file>
-            <file>file:/home/flatio/NetBeansProjects/Projeto/ProjetoPOO/Server/src/server/DAO/CardapioDAO.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaMenuCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaCadastroLoja.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/MenuPrincipal.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaCadastro.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Cliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/InterfaceViews.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Item.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Pedido.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaLogin.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/controllers/ControllerCardapioLoja.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaPedidoCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaLojaSelecionadaCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Produto.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/DAO/LojaDAO.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaVerPerfilLojaCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaLoginLoja.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaRealizarPedidoCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaMenuLoja.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Cardapio.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Loja.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaCadastroCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/model/Conta.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaVisualizarLojasCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaLoginCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaVerCardapioCliente.java</file>
+            <file>file:/C:/Users/users/Desktop/ProjetoPOO/Server/src/server/views/TelaChecarPedidoCliente.java</file>
         </group>
     </open-files>
 </project-private>

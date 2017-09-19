@@ -14,26 +14,42 @@ import server.model.Cliente;
  * @author Junior
  */
 public class TelaLogin {
-    public void login(){
-        /*
-            A view tem que validar os dados inseridos pelo usuario, login vazio, caracter invalido, etc.      
-        */
-        Cliente c;
-        Scanner tec = new Scanner(System.in);
-        String senha;
-        String login;
-        System.out.println("Digite o login: ");
-        login = tec.nextLine();
-        System.out.println("Digite a senha: ");
-        senha = tec.nextLine();
-        ControllerCliente controller1 = new ControllerCliente();
-        if(controller1.logar(login, senha) == false){
-            System.out.println("Conta não existe");
-        }else{
-            System.out.println("Bem vindo !!!");
-            c = controller1.buscarDados(login);
-            TelaMenuCliente tela = new TelaMenuCliente(c);
-                tela.exibirMenu();
+    private Scanner entrada;
+    private int escolha = 0;
+     public void exibirMenu() {
+        System.out.println("1) LOGIN CLIENTE");
+        System.out.println("2) LOGIN LOJA");
+        System.out.println("3) SAIR");
+        System.out.println("DIGITE A OPÇÃO: ");
+        
+        lerEntrada();
+        switchMenu();
+    }
+
+    public void lerEntrada() {
+        this.entrada = new Scanner(System.in);
+        this.escolha = entrada.nextInt();
+        System.gc();
+    }
+
+    public void switchMenu() {
+        switch (this.escolha) {
+            case 1:
+                TelaLoginCliente tela = new TelaLoginCliente();
+                tela.login();
+                break;
+            case 2:
+                TelaCadastro telaLoja1 = new TelaCadastro();
+                telaLoja1.exibirMenu();
+                telaLoja1.lerEntrada();
+                telaLoja1.switchMenu();
+                break;
+            case 3:
+                break;
+            default:
+                System.out.println("Opção invalida!");
+                break;
         }
     }
+       
 }

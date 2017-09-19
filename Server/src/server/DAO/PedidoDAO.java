@@ -1,38 +1,40 @@
 package server.DAO;
+
 import java.util.ArrayList;
 import server.model.Pedido;
 
 public class PedidoDAO {
-    private ArrayList<Pedido> pedidos;
+    private static ArrayList<Pedido> banco = new ArrayList<>();
     
-    public PedidoDAO(){
-        this.pedidos = new ArrayList<>();
-    }
-    
-    public void enviarPedido(Pedido p){
-        this.pedidos.add(p);
-    }
-    
-    public void removerPedido(Pedido p){
-        this.pedidos.remove(p);
-    }
-    
-    public Pedido buscarPedido(int id){
-        for (Pedido ped : pedidos){
-           /* if(id == ped.getId){ // implementar classe pedidos
-                return ped;
-            }*/
+    public static Pedido buscar(String id){
+        for (Pedido p : banco){
+            if(id.equals(p.getId())){
+                return p;
+            }
         }
         return null;
     }
     
-    public Pedido existeNovoPedido(){
-        for (Pedido ped : this.pedidos){
-            /*if(ped.getAceito == false){
-                return ped;
-            }*/
-        }
-        return null;
+    public static void adiciona(Pedido pedido){
+        banco.add(pedido);
     }
-
+    
+    public static void remove(String id){
+        for (Pedido p : banco){
+            if(id.equals(p.getId())){
+                banco.remove(p);
+            }
+        }
+    }
+    
+    public static ArrayList<Pedido> buscarTodosPedidos(String id){ // id da loja
+        
+        ArrayList<Pedido> todos = null; 
+        for(Pedido p : banco){
+            if(p.getId().substring(0,2).equals(id)){
+                todos.add(p);
+            }
+        }
+        return todos;
+    }
 }

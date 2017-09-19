@@ -1,24 +1,21 @@
-
 package server.views;
 
 import java.util.Scanner;
-import server.DAO.PedidoDAO;
-import server.controllers.ControllerCardapioCliente;
+import server.controllers.ADSAADS;
 import server.model.Cliente;
-import server.model.Pedido;
+import server.model.ContaCliente;
 
-public class TelaMenuCliente {
-   /// PedidoDAO banco = new PedidoDAO(); // O Q?? 
-    private ControllerCardapioCliente controllerC;
+public class TelaMenuCliente { 
+    private ADSAADS controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
-    private Cliente c;
-
-    TelaMenuCliente(Cliente c) {
-        controllerC= new ControllerCardapioCliente();
+    private ContaCliente c;
+    
+    TelaMenuCliente(ContaCliente c) {
+        controllerC = new ADSAADS();
         this.c = c;
-        this.escolha=0;
+        this.escolha = 0;
     }
     
     private int getId(){
@@ -29,7 +26,6 @@ public class TelaMenuCliente {
         this.idPedido = id;
     }
     
-    
     public void exibirMenu(){
        while(this.escolha!=4){
            System.out.println("1) Ver Lojas");
@@ -37,6 +33,7 @@ public class TelaMenuCliente {
            System.out.println("3) Ver Seu Perfil");
            System.out.println("4) Sair");
            System.out.print("Digite uma opção:");
+           
            lerEntrada();
            switchMenu();
            
@@ -49,40 +46,24 @@ public class TelaMenuCliente {
     }
     public void switchMenu(){
         switch (this.escolha){
-               case 1:
-                   fazerPedido();
-                   break;
-               case 2:
-                   checarPedido(idPedido);
-                   break;
-               case 3:
-                   //verPerfil();
-                   //break;
-               case 4:
-                   return;
+            case 1:
+               TelaVisualizarLojasCliente tvl = new TelaVisualizarLojasCliente(); //criar uma variavel apenas para chamar as telas, pode ser outro nome
+                break;
+            case 2:
+                //checarPedido(idPedido);
+                break;
+            case 3:
+                //verPerfil();
+                //break;
+            case 4:
+                return;
 
-               default:
-                   System.out.println("Opção inválida");
-                   break;
-           }
-    }
-    
-    
-    private void fazerPedido(){
-        controllerC.listarLojas();
-        
-        
-        
-        System.out.print("Cod. Produto: ");
-        
-        //Pedido pedido = new Pedido(cliente, produto);
-       // banco.enviarPedido(pedido);
+            default:
+                System.out.println("Opção inválida");
+                break;
+        }
     }
     
     
     
-    private Pedido checarPedido(int idPedido){
-        
-        return banco.buscarPedido(idPedido);
-    }
 }
