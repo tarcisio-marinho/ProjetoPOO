@@ -7,7 +7,7 @@ import server.model.ContaCliente;
 public class ClienteDAO {
     private static ArrayList<ContaCliente> clientes = new ArrayList<>();
     
-    public static ContaCliente buscar(String login){
+    public ContaCliente buscar(String login){
         for (ContaCliente c : clientes){
             if(c.getLogin().equals(login)){
                 return c;
@@ -16,11 +16,11 @@ public class ClienteDAO {
         return null;
     }
     
-    public static void inserir(ContaCliente c){
+    public void inserir(ContaCliente c){
         clientes.add(c);
     }
     
-    public static void remover(String login){
+    public void remover(String login){
         for (ContaCliente c: clientes){
             if(c.getLogin().equals(login)){
                 clientes.remove(c);
@@ -28,7 +28,7 @@ public class ClienteDAO {
         }
     }
     
-    public static ArrayList<ContaCliente> getTodos(){
+    public ArrayList<ContaCliente> getTodos(){
         return ClienteDAO.clientes;
     }
 }
