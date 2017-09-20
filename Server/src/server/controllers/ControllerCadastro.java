@@ -1,7 +1,6 @@
 
 package server.controllers;
 
-import java.util.ArrayList;
 
 import server.DAO.ClienteDAO;
 import server.DAO.LojaDAO;
@@ -16,21 +15,16 @@ public class ControllerCadastro {
     ClienteDAO bancoCliente = new ClienteDAO();
     LojaDAO bancoLoja = new LojaDAO();
     
-    ArrayList<ContaCliente> clientes = bancoCliente.getTodos();
-    ArrayList<ContaLoja> lojas = bancoLoja.getTodos();
-    
-	
-	Conta conta = null;
-	
 	public void add(Conta conta) {
 		
 		if(conta instanceof ContaCliente) {
 			
-			clientes.add( (ContaCliente)conta );
+			bancoCliente.getTodos().add( (ContaCliente)conta );
 		}else {
 			
-			lojas.add( (ContaLoja)conta );
+			bancoLoja.getTodos().add( (ContaLoja)conta );
 		}
+		
 		
 	}
 	
@@ -38,11 +32,12 @@ public class ControllerCadastro {
 		
 		if(conta instanceof ContaCliente) {
 			
-			clientes.remove( (ContaCliente)conta );
+			bancoCliente.getTodos().remove( (ContaCliente)conta );
 		}else {
 			
-			lojas.remove( (ContaLoja)conta );
+			bancoLoja.getTodos().remove( (ContaLoja)conta );
 		}
+		
 		
 	}
 	
