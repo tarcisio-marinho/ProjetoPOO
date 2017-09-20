@@ -2,6 +2,8 @@
 package server.DAO;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import server.model.ContaCliente;
 
 public class ClienteDAO {
@@ -16,19 +18,22 @@ public class ClienteDAO {
         return null;
     }
     
+    
+    
     public void inserir(ContaCliente c){
+    	
         clientes.add(c);
     }
     
-    public void remover(String login){
-        for (ContaCliente c: clientes){
-            if(c.getLogin().equals(login)){
-                clientes.remove(c);
-            }
-        }
-    }
     
-    public ArrayList<ContaCliente> getTodos(){
+    public void remover(ContaCliente cliente){      
+       
+    	clientes.remove(cliente);       
+    }
+        
+    
+    public List<ContaCliente> getTodos(){
+    	
         return ClienteDAO.clientes;
     }
 }
