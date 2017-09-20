@@ -2,10 +2,11 @@ package server.model;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cardapio {
     private String id;
-    private ArrayList<Produto> produtos;
+    private List<Produto> produtos;
     
     public Cardapio(String idLoja){       
 
@@ -14,13 +15,19 @@ public class Cardapio {
 
     }
     
-    public String getIdLoja() {
+    
+    
+    public String getId() {
         return id;
     }
+    
+    
     
     public void addProduto(Produto produto){
        this.produtos.add(produto);
     }
+    
+    
     
     public void removeProduto(String idProduto){
        for(Produto produto : produtos){
@@ -30,11 +37,15 @@ public class Cardapio {
        }
     }  
     
+    
+    
     public Produto getProdutoPorID(int id){
         return produtos.get(id);
     }
     
+    
+    
     public ArrayList<Produto> getProdutos(){
-    	return this.produtos;
+    	return (ArrayList<Produto>) this.produtos;
     }
 }
