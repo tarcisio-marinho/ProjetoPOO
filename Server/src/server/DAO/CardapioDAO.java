@@ -7,10 +7,9 @@ public class CardapioDAO {
     
     
     // quando a loja for criada, ela cria o cardapio
-    public void criarCardapio(String id){
-        Cardapio cardapio = new Cardapio(id);
-        cardapios.add(cardapio);
-    }    
+    public void criarCardapio(Cardapio c){
+        cardapios.add(c);
+    }
     
     
     

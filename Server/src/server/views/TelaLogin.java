@@ -39,10 +39,8 @@ public class TelaLogin {
                 tela.login();
                 break;
             case 2:
-                TelaCadastro telaLoja1 = new TelaCadastro();
-                telaLoja1.exibirMenu();
-                telaLoja1.lerEntrada();
-                telaLoja1.switchMenu();
+                TelaLoginLoja telaLoja1 = new TelaLoginLoja();
+                telaLoja1.login();
                 break;
             case 3:
                 break;

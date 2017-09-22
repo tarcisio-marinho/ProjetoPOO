@@ -5,6 +5,7 @@
  */
 package server.views;
 import java.util.Scanner;
+import server.controllers.ControllerPedido;
 import server.model.ContaLoja;
 import server.model.Loja;
 /**
@@ -22,9 +23,12 @@ public class TelaMenuLoja {
     
     public void exibirMenu(){
         while(true){
-            System.out.println("1) Novos pedidos");
-            System.out.println("2) Ver perfil");
-            System.out.println("3) Sair");
+            System.out.println("1) Ver Cardapio");
+            System.out.println("2) Editar Cardapio");
+            System.out.println("3) Ver perfil");
+            System.out.println("4) Editar Perfil");
+            System.out.println("5) Novos pedidos");
+            System.out.println("6) Sair");
             System.out.println("Digite uma opção:");
             lerEntrada();
             switchMenu();
@@ -39,14 +43,21 @@ public class TelaMenuLoja {
     public void switchMenu(){
         switch (this.escolha){
                 case 1:
-                    novosPedidos();
+                    
                     break;
                 case 2:
-                    verPerfil();
+                    
                     break;
                 case 3:
+                    verPerfil();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    novosPedidos(); //verifica e modifica o status dos pedidos
+                    break;
+                case 6: 
                     return;
-                
                 default:
                     System.out.println("Opção inválida");
                     break;
@@ -54,6 +65,8 @@ public class TelaMenuLoja {
     }
     
     public void novosPedidos(){
+        ControllerPedido p = new ControllerPedido();
+        p.novosPedidos(loja.getId()); //rodar o array de novos pedidos
         
     }
     

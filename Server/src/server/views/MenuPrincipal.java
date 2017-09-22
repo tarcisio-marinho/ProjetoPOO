@@ -2,12 +2,21 @@ package server.views;
 
 import java.util.Scanner;
 
-public class MenuPrincipal implements InterfaceViews{
+public class MenuPrincipal implements InterfaceViews {
 
     private Scanner entrada;
     private int escolha = 0;
+    private boolean loop = true;
 
-    public int getOpcao(){
+    public boolean isLoop() {
+        return this.loop;
+    }
+
+    private void sair() {
+        this.loop = false;
+    }
+
+    public int getOpcao() {
         return this.escolha;
     }
 
@@ -17,16 +26,20 @@ public class MenuPrincipal implements InterfaceViews{
         System.out.println("2) CADASTRO");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
-        
+
         lerEntrada();
         switchMenu();
     }
 
     @Override
     public void lerEntrada() {
-        this.entrada = new Scanner(System.in);
-        this.escolha = entrada.nextInt();
-        System.gc();
+        try {
+            this.entrada = new Scanner(System.in);
+            this.escolha = entrada.nextInt();
+            entrada.nextLine();
+        } catch (Exception e) {
+            System.out.println("Digite dados validos");
+        }
     }
 
     @Override
@@ -34,13 +47,13 @@ public class MenuPrincipal implements InterfaceViews{
         switch (this.escolha) {
             case 1:
                 TelaLogin telaUsuario1 = new TelaLogin();
-                telaUsuario1.login();
+                telaUsuario1.exibirMenu();
                 break;
             case 2:
                 TelaCadastro telaLoja1 = new TelaCadastro();
                 telaLoja1.exibirMenu();
-                telaLoja1.lerEntrada();
-                telaLoja1.switchMenu();
+                //  telaLoja1.lerEntrada();
+                //  telaLoja1.switchMenu();
                 break;
             case 3:
                 break;

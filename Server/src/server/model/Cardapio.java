@@ -37,10 +37,12 @@ public class Cardapio {
        }
     }  
     
-    
-    
-    public Produto getProdutoPorID(int id){
-        return produtos.get(id);
+    public Produto getProdutoPorID(String id){
+        for(Produto produto : produtos){
+            if(produto.getId().equals(id))
+                return produto;
+        }
+        return null;
     }
     
     

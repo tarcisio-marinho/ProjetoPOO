@@ -19,12 +19,8 @@ public class PedidoDAO {
         banco.add(pedido);
     }
     
-    public void remove(String id){
-        for (Pedido p : banco){
-            if(id.equals(p.getId())){
-                banco.remove(p);
-            }
-        }
+    public void remove(Pedido pedido){
+        banco.remove(pedido);
     }
     
     public ArrayList<Pedido> buscarTodosPedidos(String id){ // id da loja

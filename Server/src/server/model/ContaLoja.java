@@ -1,4 +1,5 @@
 package server.model;
+import server.model.Cardapio;
 
 public class ContaLoja extends Conta{
     private String id;
@@ -8,7 +9,7 @@ public class ContaLoja extends Conta{
     public ContaLoja(String id, String login, String senha, String nome, String telefone, String dono) {
         this.loja = new Loja(nome, telefone, dono);
         this.id = id;
-        this.cardapio = new Cardapio();
+        this.cardapio = new Cardapio(id);
         super.setLogin(login);
         super.setSenha(senha);
     }

@@ -33,8 +33,8 @@ public class Pedido {
         return id.substring(0, 2);        
     } 
      
-    public String getReferenciaPedido(){
-        return id.substring(2, 6);
+    public String getVoucherO(){
+        return this.voucher;
     }
      
     public boolean isStatusVisualizado() {

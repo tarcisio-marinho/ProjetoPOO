@@ -6,6 +6,7 @@
 package server.views;
 
 import java.util.Scanner;
+import server.controllers.ControllerLoginLoja;
 import server.controllers.ControllerLoja;
 import server.model.ContaLoja;
 import server.model.Loja;
@@ -24,15 +25,15 @@ public class TelaLoginLoja {
         login = tec.nextLine();
         System.out.println("Digite a senha: ");
         senha = tec.nextLine();
-        ControllerLoja controller1 = new ControllerLoja();
-      /*  if(controller1.logar(login, senha) == false){
+        ControllerLoginLoja controller1 = new ControllerLoginLoja();
+       loja = controller1.logar(login, senha);
+        if(loja == null){
             System.out.println("Conta não existe");
-
-        }*/else{
+        }else{
             System.out.println("Bem vindo !!!");
-            loja = controller1.buscarDados(login);
+            //c = controller1.buscarDados(login);
             TelaMenuLoja tela = new TelaMenuLoja(loja);
-                tela.exibirMenu();
+            tela.exibirMenu();
         }
     }
 }

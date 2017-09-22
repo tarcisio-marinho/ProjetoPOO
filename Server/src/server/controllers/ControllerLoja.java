@@ -1,51 +1,47 @@
-
 package server.controllers;
+
+import java.util.ArrayList;
 import server.DAO.LojaDAO;
 import server.model.ContaLoja;
-import server.model.Loja;
 
 public class ControllerLoja {
-    private LojaDAO dao;
-    
-    public ControllerLoja(){
-        this.dao = new LojaDAO();
+
+    private LojaDAO dao = new LojaDAO();
+
+    public ContaLoja buscarDados(String id) {
+        for (ContaLoja conta : this.dao.getTodos()) {
+            if (id.equals(conta.getId())) {
+                return conta;
+            }
+        }
+        return null;
     }
-    
-    public void alterarNomeDono(String id, String nome){
-        ContaLoja loja;
-        loja = dao.buscaLoja(id);
-        loja.setNomeDono(nome);
-        dao.remove(id);
-        dao.add(loja);
-    } 
-    
-    public void alterarNome(String id, String nome){
-        ContaLoja loja;
-        loja = dao.buscaLoja(id);
-        loja.setNome(nome);
-        dao.remove(id);
-        dao.add(loja);
-    } 
-    
-    public void alterarTelefone(String id, String telefone){
-        ContaLoja loja;
-        loja = dao.buscaLoja(id);
-        loja.setTelefone(telefone);
-        dao.remove(id);
-        dao.add(loja);
-    } 
-    
-    public void alterarSenha(String id, String senha){
-        ContaLoja loja;
-        loja = dao.buscaLoja(id);
-        loja.setSenha(senha);
-        dao.remove(id);
-        dao.add(loja);
-    } 
-            
-    public ContaLoja buscarDados(String login){
-        ContaLoja c;
-        c = dao.buscaLoja(login);
-        return c;
+
+    public ArrayList<ContaLoja> todasLojas() {
+        return dao.getTodos();
+    }
+
+    public ArrayList<String> verLojas() {
+        ArrayList<String> lista = new ArrayList<>();
+
+        for (ContaLoja loja : dao.getTodos()) {
+            lista.add("Id: " + loja.getId() + "   " + loja.getNome() + "  Contato: " + loja.getTelefone());
+        }
+        return lista;
+    }
+
+    public String tamanhoLoja() {
+        String id = Integer.toString(dao.getTodos().size() + 1);
+        if (id.length() <= 3) {
+            if (id.length() == 2) {
+                id = "0" + id;
+            } else if (id.length() == 1) {
+                id = "00" + id;
+            }
+            return id;
+        }
+        else{
+            return null;
+        }
     }
 }

@@ -29,7 +29,10 @@ public class ControllerCardapio {
     }
     
     
-    
-    
-    
+    /* quando a loja for criada, ela instancia um caradapio vazio
+       o criar cardapio recebe o cardapio vazio e salva no dao.        
+    */
+    public void criarCardapio(Cardapio c){
+        this.bancoCardapio.criarCardapio(c); 
+    }
 }

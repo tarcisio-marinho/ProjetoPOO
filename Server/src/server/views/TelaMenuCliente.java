@@ -1,19 +1,19 @@
 package server.views;
 
 import java.util.Scanner;
-import server.controllers.ADSAADS;
+import server.controllers.ControllerCliente;
 import server.model.Cliente;
 import server.model.ContaCliente;
 
 public class TelaMenuCliente { 
-    private ADSAADS controllerC;
+    private ControllerCliente controllerC;
     private int idPedido;
     private Scanner entrada;
     private int escolha;
     private ContaCliente c;
     
     TelaMenuCliente(ContaCliente c) {
-        controllerC = new ADSAADS();
+       ControllerCliente controllerC = new ControllerCliente();
         this.c = c;
         this.escolha = 0;
     }
@@ -48,6 +48,7 @@ public class TelaMenuCliente {
         switch (this.escolha){
             case 1:
                TelaVisualizarLojasCliente tvl = new TelaVisualizarLojasCliente(); //criar uma variavel apenas para chamar as telas, pode ser outro nome
+               tvl.exibirMenu();
                 break;
             case 2:
                 //checarPedido(idPedido);

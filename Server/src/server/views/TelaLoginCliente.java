@@ -7,6 +7,7 @@ package server.views;
 
 import java.util.Scanner;
 import server.controllers.ControllerCliente;
+import server.controllers.ControllerLoginCliente;
 import server.model.Cliente;
 import server.model.ContaCliente;
 
@@ -20,8 +21,9 @@ public class TelaLoginCliente {
         login = tec.nextLine();
         System.out.println("Digite a senha: ");
         senha = tec.nextLine();
-        ControllerCliente controller1 = new ControllerCliente();
-        if(controller1.logar(login, senha) == false){
+        ControllerLoginCliente controller1 = new ControllerLoginCliente();
+        c = controller1.logar(login, senha);
+        if(c == null){
             System.out.println("Conta não existe");
         }else{
             System.out.println("Bem vindo !!!");

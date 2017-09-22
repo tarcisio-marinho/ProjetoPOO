@@ -11,8 +11,8 @@ public class TelaCadastro implements InterfaceViews{
 
     @Override
     public void exibirMenu() {
-        System.out.println("1) Cadastro Cliente");
-        System.out.println("2) Cadastro Loja");
+        System.out.println("1) CADASTRO CLIENTE");
+        System.out.println("2) CADASTRO LOJA");
         System.out.println("3) SAIR");
         System.out.println("DIGITE A OPÇÃO: ");
         lerEntrada();
@@ -22,7 +22,7 @@ public class TelaCadastro implements InterfaceViews{
     public void lerEntrada() {
         this.entrada = new Scanner(System.in);
         this.escolha = entrada.nextInt();
-        entrada.close();
+       
         System.gc();
     }
 
@@ -34,8 +34,7 @@ public class TelaCadastro implements InterfaceViews{
                 break;
             case 2:
                 TelaCadastroLoja telaLoja1 = new TelaCadastroLoja();
-                telaLoja1.cadastroLoja();
-              
+                telaLoja1.cadastroLoja();              
                 break;
             case 3:
                 break;

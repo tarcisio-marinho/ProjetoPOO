@@ -10,68 +10,71 @@ import server.controllers.ControllerCadastro;
 import server.controllers.ControllerLoja;
 import server.model.ContaLoja;
 import server.model.Loja;
+import server.model.Validador;
 
 /**
  *
  * @author tarcisio
  */
 public class TelaCadastroLoja {
+    ControllerCadastro ctrCadastro = new ControllerCadastro();
+    ControllerLoja ctrLoja = new ControllerLoja();
+    Validador valida = new Validador();
+    public void cadastroLoja() {
+        ContaLoja l = lerDados();
+        if (l != null) {
+            ControllerCadastro ctrCadastro = new ControllerCadastro();  
+            l.setId(ctrLoja.tamanhoLoja());
+            ctrCadastro.add(l);
+            //ctrCadastro.add(l.get);
+            System.out.println("Cadastrado com sucesso!");       
+        } 
+        else{
+            System.out.println("Não foi possivel realizar o cadastro!");
+        }
+    }
 
-    public void cadastroLoja(){
-        Scanner tec = new Scanner(System.in);
-        boolean retornoController;
+    private ContaLoja lerDados() {
+        boolean retornoController = false;
         String nome;
         String senha;
         String login;
         String telefone;
-        String dono;
+        String nomeDono;
+
+        Scanner tec = new Scanner(System.in);
         System.out.println("Digite o login: ");
-        nome = tec.nextLine();
-        System.out.println("Digite a senha: ");
-        senha = tec.nextLine();
-        System.out.println("Digite o nome: ");
         login = tec.nextLine();
-        System.out.println("Digite o telefone: ");
-        telefone = tec.nextLine();
-        System.out.println("Digite o nome do dono: ");
-        dono = tec.nextLine();
-        
-        if(valida(login) == false){
-            System.out.println("login inválido");
-            return;
-        }else if(valida(senha) == false){
-            System.out.println("Senha inválida");
-            return;
-        }else if(valida(nome) == false){
-            System.out.println("Nome inválido");
-            return;
-        }else if(valida(telefone) == false){
-            System.out.println("Telefone inválido");
-            return;
-        }else if(valida(dono) == false){
-            System.out.println("Nome do dono inválido");
-            return;
-        }
-        //ContaLoja loja1 = new Conta Loja(id); resolver questão do id
-        ControllerCadastro controller1 = new ControllerCadastro();
-        
-        String idTemp = controller1.getIdNovaLoja();
-        
-        ContaLoja newLoja = new ContaLoja(idTemp,login,senha,nome,telefone,dono);
-        
-        retornoController = controller1.cadastrar(newLoja);
-        if(retornoController == false){
+        retornoController = ctrCadastro.buscarLoginLoja(login);
+        if (retornoController == true) {
             System.out.println("Cliente já cadastrado");
-        }else{
-            System.out.println("Cadastrado com sucesso!");
+            return null;
         }
-        
-    }
-    
-    public boolean valida(String s){ // VALIDAÇÃO PODE SER MELHOR
-        if(s.equals("")){
-            return false;
+        System.out.println("Digite Senha: ");
+        senha = tec.nextLine();
+        if(!valida.senha(senha)){
+            System.out.println("Senha invalida,");
+            return null;
         }
-        return true;
+        System.out.println("Digite o nome:");
+        nome = tec.nextLine();
+        if(!valida.nome(nome)){
+            System.out.println("Nome invalido!");
+            return null;
+        }
+        System.out.println("Digite o telefone");
+        telefone = tec.nextLine();
+         if(!valida.telefone(telefone)){
+            System.out.print("Telefone invalido!");
+            return null;
+        }
+        System.out.println("Digite o nome do Dono");
+        nomeDono = tec.nextLine();
+        if(!valida.nome(nomeDono)){
+            System.out.println("Nome invalido!");
+            return null;
+        }
+        ContaLoja novoLoja = new ContaLoja(this.ctrLoja.tamanhoLoja(), login, senha, nome, telefone, nomeDono);
+        return novoLoja;
     }
 }

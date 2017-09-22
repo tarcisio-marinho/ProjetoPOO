@@ -13,5 +13,17 @@ public class Item {
     public double getPreco(){
         return produto.getPreco() * this.quantidade;
     }
+    
+    
+    public int getQuantidade(){
+        return this.quantidade;
+    }
+    
+    public Produto getProduto(){
+        return this.produto;
+    }
+    
+    
+    
 }
 
