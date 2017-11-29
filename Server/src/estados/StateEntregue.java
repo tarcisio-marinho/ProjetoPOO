@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server.views;
+package estados;
 
 /**
  *
- * @author users
+ * @author junior
  */
-public class TelaVerPerfilLojaCliente {
+public class StateEntregue implements StatePedido{
+
+    @Override
+    public String estadoPedido() {
+        return "Entregue";
+    }   
     
 }

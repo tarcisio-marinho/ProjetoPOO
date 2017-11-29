@@ -15,6 +15,10 @@ public class ContaCliente extends Conta{
         
     }
     
+    public List<Pedido> getTodosPedidos(){
+        return this.pedidos;
+    }
+    
     public void addPedido(Pedido pedido){
         pedidos.add(pedido);
     }
@@ -22,7 +26,7 @@ public class ContaCliente extends Conta{
     public boolean removePedidosEntregues(String idPedido){
         boolean objeto = false;
         for(Pedido pedido : pedidos){
-            if( pedido.isStatusEntregue()){
+            if( pedido.getEstadoPedido().equals("Entregue")){
                 objeto = pedidos.remove(pedido);
             }
         }
@@ -35,5 +39,12 @@ public class ContaCliente extends Conta{
     
     public String getTelefone(){
         return this.cliente.getTelefone();
+    }
+    public void setNome(String nome){
+        this.cliente.setNome(nome);
+    }
+    
+    public void setTelefone(String telefone){
+        this.cliente.setTelefone(telefone);
     }
 }

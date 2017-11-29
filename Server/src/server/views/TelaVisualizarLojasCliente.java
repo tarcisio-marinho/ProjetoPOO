@@ -5,13 +5,13 @@
  */
 package server.views;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 import server.controllers.ControllerCardapio;
 import server.controllers.ControllerLoja;
 import server.model.Cardapio;
 import server.model.ContaCliente;
-import server.model.Loja;
+
 
 /**
  *
@@ -24,6 +24,11 @@ public class TelaVisualizarLojasCliente {
     private int escolha;
     private String idLoja;
     private boolean op;
+    private ContaCliente cliente;
+    
+    public TelaVisualizarLojasCliente(ContaCliente c){
+        this.cliente = c;
+    }
 
     public void exibirMenu() {
         listarLojas();
@@ -53,22 +58,52 @@ public class TelaVisualizarLojasCliente {
             case 1:
                 System.out.println("Digite o ID da loja:");
                 String id = entrada.nextLine();
-                ControllerCardapio controlCardapio = new ControllerCardapio();
+                
+                ControllerCardapio controlCardapio = new ControllerCardapio(id);
                 Cardapio cardapio = controlCardapio.getCardapio(id);
+                
                 if (cardapio != null) {
-                    TelaVerCardapioCliente telaVCC = new TelaVerCardapioCliente(cardapio);
+                	
+                	System.out.println(""+cardapio.getId());
+                    
+                	TelaVerCardapioCliente telaVCC = new TelaVerCardapioCliente(cardapio,cliente);
                     telaVCC.listarCardapio();
-                } else {
+                
+                }else {
                     System.out.println("Cardapio de Loja não encontrado!");
                 }
                 break;
+                
             case 2:
-
                 break;
             default:
                 System.out.println("Opção inválida");
                 break;
         }
     }
+
+	public boolean isOp() {
+		return op;
+	}
+
+	public void setOp(boolean op) {
+		this.op = op;
+	}
+
+	public String getIdLoja() {
+		return idLoja;
+	}
+
+	public void setIdLoja(String idLoja) {
+		this.idLoja = idLoja;
+	}
+
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
 }
 
