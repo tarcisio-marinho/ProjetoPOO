@@ -5,10 +5,11 @@
  */
 package novo.model;
 
-/**
- *
- * @author users
- */
-public class Desconto100 {
-    
+public class Desconto100 implements StrategyDescontoProduto{
+
+    @Override
+    public void aplicar(Produto produto) {
+        double preco = produto.getPreco();
+        produto.setPreco(preco * 0.0); 
+    }
 }
