@@ -1,28 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package novo.model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author users
- */
 public class Pedido {
-   private ArrayList<Produto> produtos; 
+   private ArrayList<ItemDeVenda> itens; 
    
    
    public Pedido(){
-       produtos = new ArrayList<>();
+       itens = new ArrayList<>();
    }
    
    public double getPrecoTotal(){
        double valor = 0;
-       for(Produto p : produtos){
-           valor = valor + p.getPreco();
+       for(ItemDeVenda i : itens){
+           valor = valor + i.getPreco();
        }
        return valor;
    }
